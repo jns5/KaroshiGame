@@ -10,4 +10,4 @@ Blue Virus:  Faster than the others, but loses double the points when hitting a 
 
 Red virus: Natural hunter, gain more points when eating other viruses, half points when eating food. 
 
-Green virus: 
+Green virus: Strongest one, loses least points when hitting a mask/sanitizer but moves slower

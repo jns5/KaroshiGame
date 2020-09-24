@@ -5,6 +5,9 @@ Play as a virus and get the highest score of each round. Eat food and grow in si
 Each round lasts 5 minutes and the top 10 players are displayed on a scoreboard. 
 
 Virus types: (Unsure?)
+
 Blue Virus:  Faster than the others, but loses double the points when hitting a mask/sanitizer.
+
 Red virus: Natural hunter, gain more points when eating other viruses, half points when eating food. 
+
 Green virus: 

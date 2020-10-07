@@ -1,0 +1,119 @@
+:root{
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0%;
+    padding: 0%;
+    text-align: justify;
+}
+
+.main_gamePage{
+    margin-left: 5rem;
+    margin-right: 5rem;
+    padding: 1rem;
+}
+
+.main_indexPage{
+    margin-left: 5rem;
+    padding: 1rem;
+}
+
+.gamePage{
+    margin: 0%;
+    padding: 0%;
+    background-image: url("/code/images/bg_image.png"); 
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+} 
+
+.indexPage{
+    margin: 0%;
+    padding: 0%;
+    background-color: #281636;
+} 
+
+h1{
+    color: #ffffff;
+    font-weight: bolder;
+    margin: 0%;
+    text-align: center;
+}
+
+h2{
+    color: #ffffff;
+    margin: 1%;
+    padding: 2%;
+}
+
+.optionbar{
+    width: 5rem;
+    height: 100vh; 
+    position: fixed;
+    background: #4b0082;
+}
+
+.optionbar_main{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.optionbar_list{
+    width: 100%;
+    height: 100%;
+}
+
+.optionbar_text{
+    display: flex;
+    align-items: center;
+    height: 2.5rem;
+    font-size: 18px;
+    margin: 0.1rem;
+}
+
+a {
+    color: #000000;
+    text-decoration: none;
+}
+
+a:hover 
+{
+    color:gray; 
+    text-decoration:none; 
+    cursor:pointer;  
+}
+
+.introtext{
+    margin: 1%;
+    padding: 2%;
+    color: #ffffff;
+}
+
+#gameScreen{ 
+    width: 1150px;
+    height: 630px; 
+    border-style: solid;
+    border-radius: 1px;
+    border-color: #ffffff;
+
+}
+
+*::-webkit-scrollbar {
+    width: 5px;               
+  }
+  body::-webkit-scrollbar-track {
+    background: #4b0082;        
+  }
+  body::-webkit-scrollbar-thumb {
+    background-color: #9d65c9;    
+    border-radius: 3px;       
+    border: 3px;  
+    border-color: #9d65c9;
+    border-style: solid;
+  }
+  
+

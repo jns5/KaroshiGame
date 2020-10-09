@@ -20,7 +20,7 @@
 .gamePage{
     margin: 0%;
     padding: 0%;
-    background-image: url("/code/images/bg_image.png"); 
+    background-image: url("images/bg_image.png"); 
     background-repeat: no-repeat;
     background-position: center;
     background-attachment: fixed;

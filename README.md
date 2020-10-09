@@ -1,14 +1,19 @@
 # KaroshiGame
 
-Play as a virus and get the highest score of each round. Eat food and grow in size to beat others, but make sure to avoid the sanitizer and the masks! 
+Play as a virus and get the highest score of each round. Eat food(pellets) to increase your score and beat others by shooting at them, but make sure to avoid the sanitizer and the masks! 
 
 Points are gained:
 - By eating pellets
-- By successfully shooting people
+- By successfully killing other players 
 
 Points are lost:
-- Getting hit
-- Colliding with sanitizer and mask
+- By colliding with sanitizer and mask
+- By shooting other players, this makes the player cautious of shoothing randomly
+
+Health is lost:
+- When getting shoot by the players 
+- When colliding with sanitizer and mask
+
 
 Each round lasts 5 minutes and the top 10 players (those with the highest number of points) are displayed on a scoreboard. 
 

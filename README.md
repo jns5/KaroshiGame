@@ -8,10 +8,10 @@ Points are gained:
 
 Points are lost:
 - By colliding with sanitizer and mask
-- By shooting other players, this makes the player cautious of shoothing randomly
+- By shooting other players, this makes the player cautious of shooting randomly
 
 Health is lost:
-- When getting shoot by the players 
+- When getting shot by the players 
 - When colliding with sanitizer and mask
 
 
@@ -21,8 +21,7 @@ Virus types (Players choose their virus):
 
 Blue Virus:  Faster than the others, but loses double the points when hitting a mask/sanitizer.
 
-Red virus: Natural hunter, gain more points when eating other viruses, half points when eating food. 
+Red virus: Natural hunter, gains more points when it kills other viruses, but half points when eating food. 
 
-Green virus: Strongest one, loses least points when hitting a mask/sanitizer but moves slower.
-
+Green virus: Strongest one, loses least points when hitting a mask/sanitizer but moves slower than the others.
 

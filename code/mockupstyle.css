@@ -1,0 +1,131 @@
+body{
+    background-color: #060b41;
+    font-family:Arial, Helvetica, sans-serif
+}
+.bar
+{
+    width : 300px;
+    height : 20px;
+    border:1px solid #000000;
+    background-color: #ffffff;
+    position : absolute;
+    top: 30px;
+    left: 25px;
+}
+.healthbar
+{
+    width : 250px;
+    height : 15px;
+    border:1px solid #000000;
+    background-color: #1b9c31;
+    position : absolute;
+    padding-top: 5px;
+    top: 30px;
+    left: 25px;
+}
+h2{
+    
+    color: #a515f9;
+    float:right;
+    position:absolute;
+    right: 100px;
+    top: 30px;
+}
+.board
+{
+    font-size: 16px;
+    position:absolute;
+    width: 150px;
+    height: 140px;
+    background-color:whitesmoke;
+    right:104px;
+    top:80px;
+    padding-left:5px;
+}
+.chats
+{
+    position:absolute;
+    width: 270px;
+    height: 140px;
+    background-color:whitesmoke;
+    right:104px;
+    bottom: 80px;
+}
+.textbar
+{
+    color: #5a5757;
+    padding-top:5px;
+    padding-left: 5px;
+    position:absolute;
+    width: 265px;
+    height: 25px;
+    background-color:whitesmoke;
+    right:104px;
+    bottom:40px;
+}
+.icon
+{
+    color:white;
+    width: 220px;
+    height: 220px;
+    border-radius: 205px;
+    background-color: rgb(40, 137, 228);
+    position: relative;
+    margin: 190px auto;
+    right: 100px;
+}   
+.dot2
+{
+    position: absolute;
+    height: 25px;
+    width: 25px;
+    background-color: rgb(187, 44, 44);
+    border-radius: 50px;
+    margin: 50px auto;
+    top:80px;
+    left: 440px;
+}
+.dot3
+{
+    position: absolute;
+    height: 25px;
+    width: 25px;
+    background-color: rgb(187, 44, 44);
+    border-radius: 50px;
+    margin: 50px auto;
+    top:250px;
+    left: 109px;
+}
+.dot1{
+    color:white;
+    position: absolute;
+    height: 25px;
+    width: 25px;
+    background-color: rgb(187, 44, 44);
+    border-radius: 50px;
+    margin: 50px auto;
+    bottom:40px;
+    left: 289px;
+}
+.dot4
+{
+    position: absolute;
+    height: 25px;
+    width: 25px;
+    background-color: rgb(187, 44, 44);
+    border-radius: 50px;
+    margin: 50px auto;
+    top:100px;
+    right: 359px;
+}
+.dot5
+{
+    position: absolute;
+    height: 25px;
+    width: 25px;
+    background-color: rgb(187, 44, 44);
+    border-radius: 50px;
+    margin: 50px auto;
+    bottom:100px;
+    right: 460px;
+}

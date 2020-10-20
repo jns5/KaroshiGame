@@ -2,6 +2,10 @@ body{
     background-color: #060b41;
     font-family:Arial, Helvetica, sans-serif
 }
+.game-page
+{
+    overflow:hidden;
+}
 .bar
 {
     width : 300px;
@@ -42,26 +46,26 @@ h2{
     top:80px;
     padding-left:5px;
 }
-.chats
-{
-    position:absolute;
-    width: 270px;
-    height: 140px;
-    background-color:whitesmoke;
-    right:104px;
-    bottom: 80px;
+.chatbox {
+    position: absolute;
+    width: 250px;
+    height: 200px;
+    background:whitesmoke;
+    bottom: 74px;
+    right: 104px;
 }
-.textbar
-{
-    color: #5a5757;
-    padding-top:5px;
-    padding-left: 5px;
-    position:absolute;
-    width: 265px;
-    height: 25px;
-    background-color:whitesmoke;
-    right:104px;
-    bottom:40px;
+
+.chat-list {
+    padding: 5px;
+    height: 190px;
+    overflow: hidden;
+}
+
+#chat-input {
+
+    width: 93%;
+    padding: 8px;
+    border: 1px solid #4d4a4a;
 }
 #icon
 {

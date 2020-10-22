@@ -133,3 +133,26 @@ h2{
     bottom:100px;
     right: 460px;
 }
+.mask
+{
+    background-image: url(..\images\mask.jpg);
+    background-size: 100%;
+    position:absolute;
+    width: 80px;
+    margin: 50px auto;
+    bottom:100px;
+    right: 460px;
+    
+
+}
+.sanitizer
+{
+    background-image: url(..\images\sanitizer.jpg);
+    background-size: 100%;
+    position:absolute;
+    width: 30px;
+    margin: 50px auto;
+    bottom:100px;
+    right: 460px;
+
+}

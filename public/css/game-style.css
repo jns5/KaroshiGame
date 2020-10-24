@@ -156,3 +156,12 @@ h2{
     right: 460px;
 
 }
+
+#laser
+{
+    background: greenyellow;
+    width: 2px;
+    height: 10px;
+    position: absolute;
+
+}

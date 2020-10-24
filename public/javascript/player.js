@@ -2,29 +2,43 @@ function playerMovement(){
     window.addEventListener('keydown',move);
 }
 
+function playerShoot(){
+    let start = Date.now();
+
+    let timer = setInterval(function() {
+    let timePassed = Date.now() - start;
+
+    if (timePassed >= 2000){clearInterval(timer); return;}
+    laser.style.top = parseInt(laser.style.top) -12 +'px';
+
+}, 20);
+}
+
 function move(e) {
-    var element = document.getElementById("icon");
-    if(element.style.left == '-180px')// boundaries are set
-        element.style.left = '-175px';
-    else if(element.style.left =='870px')
-        element.style.left = '865px';
-    else if(element.style.top =='-180px')
-        element.style.top = '-175px';
-    else if(element.style.top =='160px')
-        element.style.top = '155px';
     switch (e.keyCode) {
         case 65:
+            var element = document.getElementById("icon");
             element.style.left = parseInt(element.style.left) - 5 + 'px';
         break;
         case 68:
+            var element = document.getElementById("icon");
             element.style.left = parseInt(element.style.left) + 5 + 'px';
         break;
         case 87:
+            var element = document.getElementById("icon");
             element.style.top = parseInt(element.style.top) - 5 + 'px';
         break;
         case 83:
+            var element = document.getElementById("icon");
             element.style.top = parseInt(element.style.top) + 5 + 'px';
         break;
+        case 32: // space button
+            var element = document.getElementById("icon");
+            var laser = document.getElementById("laser");
+            laser.style.top = parseInt(element.style.top) + 170 + 'px';
+            laser.style.left = parseInt(element.style.left) + 300 +'px';
+            playerShoot();
+
     }
     e.preventDefault();
 };

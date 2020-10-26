@@ -3,13 +3,12 @@
 <head>
     <title>Virus.io</title>
     <link rel="stylesheet" href="public/css/game-style.css">
-    <script type="text/javascript" src="public/javascript/player.js"></script>
+    <script src="public/javascript/player.js"></script>
 </head>
-<body onload="playerMovement()" onkeydown="" onkeyup="" class="game-page">
-    
+<body  class="game-page" onload="" onkeydown="" onkeyup="">
     <div class="health">
         <div class="bar"></div> 
-        <div class="healthbar"> </div>
+        <div id="healthbar"> </div>
     </div>
     <div class ="leaderboard">
         <h2><b>Leaderboard:</b></h2>
@@ -32,14 +31,23 @@
             <h3><b> Score: 102</b></h3>
         </div>
     </div>
-    <div class="chatbox">
-        <form>
-            <div class="chat-list"></div>
-            <input id="chat-input" type="text"  placeholder="Type to chat" autocomplete="off">
-        </form>
-    </div>
     <div id="laser"></div>
     <img id="icon" style="left:360px; top:70px;">
+    <div class="chatbox">
+        <form id="chat-list"></form>       
+        <input id="chat-input" type="text"  placeholder="Type to chat" autocomplete="off" />
+        <button id="send" onclick="message()">Send</button>
+        <script>
+            var chat = document.getElementById("chat-input"); // to use enter to send message
+            chat.addEventListener("keyup", function(event) {
+                if (event.keyCode === 13) {
+                    event.preventDefault();
+                    document.getElementById("send").click();
+                }
+            });
+        </script>
+    </div>
+    
     <div class="food">
         <span class="dot1"><br></span>
         <span class="dot2"></span>

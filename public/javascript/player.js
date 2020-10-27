@@ -22,28 +22,31 @@ function listener(evt, element, fn) {
     switch (keycode) {
         case Key.LEFT:
           blob.style.left = parseInt(blob.style.left) - 5 + 'px';
+          movePointer(keycode);
         break;
         case Key.UP:
           blob.style.top = parseInt(blob.style.top) - 5 + 'px';
+          movePointer(keycode);
         break;
         case Key.RIGHT:
           blob.style.left = parseInt(blob.style.left) + 5 + 'px';
+          movePointer(keycode);
         break;
         case Key.DOWN:
           blob.style.top = parseInt(blob.style.top) + 5 + 'px';
+          movePointer(keycode);
         break;
         case 32: // space button
             var element = document.getElementById("icon");
             var laser = document.getElementById("laser");
-            laser.style.top = parseInt(element.style.top) + 170 + 'px';
-            laser.style.left = parseInt(element.style.left) + 300 +'px';
+            laser.style.top = parseInt(element.style.top) + 175 + 'px';
+            laser.style.left = parseInt(element.style.left) + 290 +'px';
             playerShoot();
         break;
         default:
             return;
     }
-  }
-  
+}
  listener('keydown', document, move);
 
   function message()//to display the chat text
@@ -61,4 +64,35 @@ function listener(evt, element, fn) {
     if (timePassed >= 2000){clearInterval(timer); return;}
     laser.style.top = parseInt(laser.style.top) -12 +'px';
 
-}, 20);}
+  }, 20);}
+
+  function movePointer(keycode){
+      var pointer = document.getElementById("arrow");
+        var element = document.getElementById("icon");
+        switch (keycode) {
+        
+        //Left
+        case 37:
+            document.getElementById("arrow").style.transform = "rotate(135deg)";
+            pointer.style.top = parseInt(element.style.top) + 290 + 'px';
+            pointer.style.left = parseInt(element.style.left) + 180 +'px';
+        break;
+        //Right
+        case 39:
+            document.getElementById("arrow").style.transform = "rotate(-45deg)";
+            pointer.style.top = parseInt(element.style.top) + 290 + 'px';
+            pointer.style.left = parseInt(element.style.left) + 410 +'px';
+        break;
+        //Up
+        case 38:
+            document.getElementById("arrow").style.transform = "rotate(-135deg)";
+            pointer.style.top = parseInt(element.style.top) + 180  + 'px';
+            pointer.style.left = parseInt(element.style.left) + 290 +'px';
+        break;
+        //Down
+        case 40:
+            document.getElementById("arrow").style.transform = "rotate(45deg)";
+            pointer.style.top = parseInt(element.style.top) + 410 + 'px';
+            pointer.style.left = parseInt(element.style.left) + 290 +'px';
+        break;
+}}

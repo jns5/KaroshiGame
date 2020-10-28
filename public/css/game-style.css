@@ -82,6 +82,7 @@ h2{
     background-color: #2889e4;
     position: absolute;;
     margin: 190px;
+    z-index: -1;
 }   
 
 
@@ -95,6 +96,7 @@ h2{
     margin: 50px auto;
     top:80px;
     left: 440px;
+    z-index: -2;
 }
 .dot3
 {
@@ -106,6 +108,7 @@ h2{
     margin: 50px auto;
     top:250px;
     left: 109px;
+    z-index: -2;
 }
 .dot1{
     color:white;
@@ -117,6 +120,7 @@ h2{
     margin: 50px auto;
     bottom:40px;
     left: 289px;
+    z-index: -2;
 }
 .dot4
 {
@@ -128,6 +132,7 @@ h2{
     margin: 50px auto;
     top:100px;
     right: 359px;
+    z-index: -2;
 }
 .dot5
 {
@@ -139,6 +144,7 @@ h2{
     margin: 50px auto;
     bottom:100px;
     right: 460px;
+    z-index: -2;
 }
 .mask
 {

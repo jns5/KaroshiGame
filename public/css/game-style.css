@@ -1,9 +1,11 @@
 body{
-    background-color: #060b41;
+    
     font-family:Arial, Helvetica, sans-serif
+    
 }
 .game-page
 {
+    background :#060b41 scroll;
     overflow:hidden;
 }
 .bar
@@ -11,7 +13,7 @@ body{
     width : 300px;
     height : 20px;
     border:2px solid #000000;
-    background-color: #ffffff;
+    background: #ffffff;
     position : absolute;
     top: 30px;
     left: 25px;
@@ -80,14 +82,15 @@ h2{
     height: 220px;
     border-radius: 205px;
     background-color: #2889e4;
-    position: absolute;;
+    position: fixed;
     margin: 190px;
+    z-index: -1;
+
 }   
 
 
 .pellet {
     position: absolute;
-    
 }
 
 .mask

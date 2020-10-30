@@ -34,7 +34,7 @@ h2{
     right: 100px;
     top: 30px;
 }
-.board
+#board
 {
     font-size: 16px;
     position:absolute;
@@ -82,70 +82,14 @@ h2{
     background-color: #2889e4;
     position: absolute;;
     margin: 190px;
-    z-index: -1;
 }   
 
 
-.dot2
-{
+.pellet {
     position: absolute;
-    height: 25px;
-    width: 25px;
-    background-color: rgb(187, 44, 44);
-    border-radius: 50px;
-    margin: 50px auto;
-    top:80px;
-    left: 440px;
-    z-index: -2;
+    
 }
-.dot3
-{
-    position: absolute;
-    height: 25px;
-    width: 25px;
-    background-color: rgb(187, 44, 44);
-    border-radius: 50px;
-    margin: 50px auto;
-    top:250px;
-    left: 109px;
-    z-index: -2;
-}
-.dot1{
-    color:white;
-    position: absolute;
-    height: 25px;
-    width: 25px;
-    background-color: rgb(187, 44, 44);
-    border-radius: 50px;
-    margin: 50px auto;
-    bottom:40px;
-    left: 289px;
-    z-index: -2;
-}
-.dot4
-{
-    position: absolute;
-    height: 25px;
-    width: 25px;
-    background-color: rgb(187, 44, 44);
-    border-radius: 50px;
-    margin: 50px auto;
-    top:100px;
-    right: 359px;
-    z-index: -2;
-}
-.dot5
-{
-    position: absolute;
-    height: 25px;
-    width: 25px;
-    background-color: rgb(187, 44, 44);
-    border-radius: 50px;
-    margin: 50px auto;
-    bottom:100px;
-    right: 460px;
-    z-index: -2;
-}
+
 .mask
 {
     background-image: url(..\images\mask.jpg);

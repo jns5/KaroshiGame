@@ -5,8 +5,8 @@ function spawnpellets(){
     pellet.setAttribute("src", "public/images/red.png");
     pellet.classList.add("pellet")
     var board = document.querySelector(".game-page");
-    var boardwidth = board.clientHeight;
     var boardheight = board.clientWidth;
+    var boardwidth = board.clientHeight;
     var randomx = Math.floor(Math.random()* boardwidth);
     var randomy = Math.floor(Math.random()* boardheight);
     pellet.style.left = randomx + "px";
@@ -15,6 +15,7 @@ function spawnpellets(){
     board.append(pellet);
     
 }
-spawnpellets();
-spawnpellets();
 
+for (var i = 0; i < 200; i++ ) {
+    document.body.append(spawnpellets());
+}

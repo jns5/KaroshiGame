@@ -16,6 +16,7 @@ function spawnpellets(){
     
 }
 
+var pelletes = [];
 for (var i = 0; i < 200; i++ ) {
-    document.body.append(spawnpellets());
+    pelletes.push(spawnpellets());
 }

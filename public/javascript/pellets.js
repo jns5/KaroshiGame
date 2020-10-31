@@ -7,8 +7,8 @@ function spawnpellets(){
     var board = document.querySelector(".game-page");
     var boardheight = board.clientWidth;
     var boardwidth = board.clientHeight;
-    var randomx = parseInt(Math.random()* window.innerWidth - window.innerWidth/3.5);
-    var randomy = parseInt(Math.random()* window.innerHeight - window.innerHeight/1.5);
+    var randomx = randoms()[0];
+    var randomy = randoms()[1]; 
     pellet.style.left = randomx + "px";
     pellet.style.top = randomy + "px";
     board.append(pellet);
@@ -30,3 +30,9 @@ function onplayer(){
       }
     }
   }
+function randoms()
+{
+    var randomx = parseInt(Math.random()* window.innerWidth - window.innerWidth/4);
+    var randomy = parseInt(Math.random()* window.innerHeight - window.innerHeight/2);
+    return [randomx, randomy];
+}

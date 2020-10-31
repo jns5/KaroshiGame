@@ -39,7 +39,7 @@ function listener(evt, element, fn) {
         case 32: // space button
             var element = document.getElementById("icon");
             var laser = document.getElementById("laser");
-            laser.style.top = parseInt(element.style.top) + 175 + 'px';
+            laser.style.top = parseInt(element.style.top) + 230 + 'px';
             laser.style.left = parseInt(element.style.left) + 290 +'px';
             playerShoot();
         break;
@@ -62,7 +62,7 @@ function listener(evt, element, fn) {
     let timePassed = Date.now() - start;
 
     if (timePassed >= 2000){clearInterval(timer); return;}
-    laser.style.top = parseInt(laser.style.top) -12 +'px';
+    laser.style.top = parseInt(laser.style.top) -8 +'px';
 
   }, 20);}
 

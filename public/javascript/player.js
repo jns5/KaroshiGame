@@ -74,25 +74,25 @@ function listener(evt, element, fn) {
         //Left
         case 37:
             document.getElementById("arrow").style.transform = "rotate(135deg)";
-            pointer.style.top = parseInt(element.style.top) + 290 + 'px';
+            pointer.style.top = parseInt(element.style.top) + 300 + 'px';
             pointer.style.left = parseInt(element.style.left) + 180 +'px';
         break;
         //Right
         case 39:
             document.getElementById("arrow").style.transform = "rotate(-45deg)";
-            pointer.style.top = parseInt(element.style.top) + 290 + 'px';
+            pointer.style.top = parseInt(element.style.top) + 300 + 'px';
             pointer.style.left = parseInt(element.style.left) + 410 +'px';
         break;
         //Up
         case 38:
             document.getElementById("arrow").style.transform = "rotate(-135deg)";
-            pointer.style.top = parseInt(element.style.top) + 180  + 'px';
+            pointer.style.top = parseInt(element.style.top) + 200  + 'px';
             pointer.style.left = parseInt(element.style.left) + 290 +'px';
         break;
         //Down
         case 40:
             document.getElementById("arrow").style.transform = "rotate(45deg)";
-            pointer.style.top = parseInt(element.style.top) + 410 + 'px';
+            pointer.style.top = parseInt(element.style.top) + 400 + 'px';
             pointer.style.left = parseInt(element.style.left) + 290 +'px';
         break;
 }}

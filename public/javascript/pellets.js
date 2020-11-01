@@ -20,16 +20,23 @@ for (var i = 0; i < 200; i++ ) {
     pelletes.push(spawnpellets());
 }
 //if player is on blob, pop pellet from the array
-function onplayer(){
-    var blob = document.getElementById("icon");
-    var pellet = document.getElementById("public/images/red.png")
-    for (var i = pelletes.length - 1; i >=0; i--){
-      pelletes[i].show();
-      if (blob.style.top == pellet.style.top && blob.style.left == pellet.style.left){
-       pelletes.splice(i, 1);
-      }
-    }
-  }
+// function onplayer(){
+//     var blob = document.getElementById("icon");
+//     var pellet = document.getElementById("public/images/red.png")
+//     for (var i = pelletes.length - 1; i >=0; i--){
+//       pelletes[i].show();
+//       if (blob.style.top == pellet.style.top && blob.style.left == pellet.style.left){
+//        pelletes.splice(i, 1);
+//       }
+//     }
+//   }
+function pelletposition(){
+  var pellet = document.getElementsByClassName(".pellet");
+  var pelletpos = pellet.getBoundingClientRect();
+  x = pelletpos.left;
+  y = pelletpos.top;
+}
+
 function randoms()
 {
     var randomx = parseInt(Math.random()* window.innerWidth - window.innerWidth/4);

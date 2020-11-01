@@ -43,11 +43,6 @@ function listener(evt, element, fn) {
           direction = "Down";
         break;
         case 32: // space button
-            // var element = document.getElementById("icon");
-            // var laser = document.getElementById("laser");
-            // laser.style.top = parseInt(element.style.top) + 230 + 'px';
-            // laser.style.left = parseInt(element.style.left) + 290 +'px';
-            // playerShoot();
             
             switch (direction) {
               case "Left":

@@ -62,6 +62,13 @@ function listener(evt, element, fn) {
         default:
             return;
     }
+    for (let i = 0; i < pelletes.length; i++){
+      if (cross(pelletes[i], blob)){
+        var board = document.querySelector(".game-page");
+        board.removeChild(pelletes[i]);
+      }
+
+    }
 }
 listener('keydown', document, move);
 
@@ -167,3 +174,50 @@ listener('keydown', document, move);
             pointer.style.left = parseInt(element.style.left) + 290 +'px';
         break;
 }}
+
+
+function cross(element1, element2) {
+  left1 = element1.offsetLeft; //i1x
+  top1 = element1.offsetTop; //i1y
+  right1 = element1.offsetLeft + element1.offsetWidth; //r1x
+  bottom1 = element1.offsetTop + element1.offsetHeight; //r1y
+
+  left2 = element2.offsetLeft; //i2x
+  top2 = element2.offsetTop; //i2y
+  right2 = element2.offsetLeft + element2.offsetWidth; //r2x
+  bottom2 = element2.offsetTop + element2.offsetHeight; //r2y
+
+  x_overlap = Math.max(0, Math.min(right1, right2) - Math.max(left1, left2));
+  y_overlap = Math.max(0, Math.min(bottom1, bottom2) - Math.max(top1, top2));
+  overlapArea = x_overlap * y_overlap;
+
+  if (overlapArea == 0 || isNaN(overlapArea)) {
+      return false;
+  }
+  return true;
+
+}
+
+
+function createpellet(){
+  let pellet = document.createElement("img");
+  pellet.setAttribute("src", "public/images/red.png");
+  pellet.classList.add("pellet")
+  var board = document.querySelector(".game-page");
+  randomx = parseInt(Math.random()* window.innerWidth - window.innerWidth/3.5);
+  randomy = parseInt(Math.random()* window.innerHeight - window.innerHeight/1.5);
+  pellet.style.left = randomx + "px";
+  pellet.style.top  = randomy + "px";
+  board.appendChild(pellet);
+  console.log(randomx, randomy);
+  return pellet;
+
+}
+pelletes = new Array();
+for (var i = 0; i < 200; i++ ){
+  pelletes.push(createpellet());
+}
+
+// for (let i = 0; i < pelletes.length; i++){
+//   if (cross(pelletes[i], blob = document.getElementById("icon")));
+// }

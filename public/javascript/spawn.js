@@ -34,3 +34,9 @@ for (var i = 0; i < 10; i++ ) {
     masks.push(spawnmasks());
     sanitizers.push(spawnsan());
 }
+function randoms()
+{
+    var randomx = parseInt(Math.random()* window.innerWidth - window.innerWidth/4);
+    var randomy = parseInt(Math.random()* window.innerHeight - window.innerHeight/2);
+    return [randomx, randomy];
+}

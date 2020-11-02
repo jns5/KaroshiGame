@@ -8,6 +8,43 @@ body{
     background :#060b41 scroll;
     overflow:hidden;
 }
+.transparent-overlay{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #44336d81;
+
+}
+.username-form{
+    margin: auto;
+    text-align: center;
+    background: #cd39eba1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    border-radius: 15px;
+}
+#username{
+    background-color: #bb8ae42a;
+    font-size: 25px;
+    font-family: 'Krona One', sans-serif;
+    text-align: center;
+    border-radius: 15px;
+    border: 3px solid black;
+}
+#submit{
+    margin-top: 5px;
+    background-color: #530a8fce;
+    font-size: 25px;
+    font-family: 'Krona One', sans-serif;
+    text-align: center;
+    border-radius: 15px;
+    border: 3px solid black;
+    width: 50%;
+}
+
 .bar
 {
     width : 300px;

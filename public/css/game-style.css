@@ -53,6 +53,7 @@ body{
     color: #f0fff0;
     top: 10px;
     left: 25px;
+    font-size: 30px;
 } 
 
 h2{
@@ -67,9 +68,9 @@ h2{
     font-size: 12px;
     position:absolute;
     width: 150px;
-    height: 140px;
-    background-color: whitesmoke;
-    right:104px;
+    height: 145px;
+    color: whitesmoke;
+    right:120px;
     top:80px;
     padding-left:5px;
 }
@@ -78,15 +79,20 @@ h2{
     position: absolute;
     width: 270px;
     height: 200px;
-    background:whitesmoke;
+    background:#f5f5f5;
     bottom: 74px;
     right: 104px;
+    opacity: .4;
+}
+
+.chatbox:hover{
+    opacity: 1;
 }
 
 #chat-list {
     padding: 5px;
     height: 190px;
-    overflow: hidden;
+    background-color:#f5f5f5; 
 }
 
 #chat-input {
@@ -94,7 +100,13 @@ h2{
     width: 190px;
     padding: 8px;
     border: 1px solid #4d4a4a;
+    opacity: .4;
 }
+
+#chat-input:hover{
+    opacity: 1;
+}
+
 #send{
     text-align: center;
     font-size: 16px;
@@ -144,5 +156,6 @@ h2{
     padding: 3px;
     position: absolute;
 }
+
 
 

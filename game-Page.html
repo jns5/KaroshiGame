@@ -10,15 +10,14 @@
 </head>
 <body  class="game-page" onload="" onkeydown="" onkeyup="">
     
-    <div class="transparent-overlay"></div>
-        <div class="username-form">
-            <form action="">
+    <div id="transparent-overlay"></div>
+        <div id="username-form">
+            <form>
                 <input type="text" id="username" value="" placeholder="enter your username"><br>
-                <input onclick=submit() type="submit" id="submit"  value="play">
+                <input  type="button" id="submit"  value="play">
             </form>
         </div>
-    
-
+   
 
     <div class="health">
         <div class="bar"></div> 
@@ -66,5 +65,13 @@
     <script src="public/javascript/pellets.js"></script>
     <script src="public/javascript/spawn.js"></script>
     <script src="public/javascript/player.js"></script>
+    <script type="text/javascript">
+        var submit = document.getElementById("submit");
+        submit.onclick = function(){
+            document.getElementById("username").style.visibility="hidden";
+            document.getElementById("transparent-overlay").style.visibility="hidden";
+            document.getElementById("username-form").style.visibility="hidden";
+        }
+    </script>
 </body>
 </html>

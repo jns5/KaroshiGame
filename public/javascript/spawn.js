@@ -1,6 +1,8 @@
 //where we create a
 function spawnmasks(){
     var mask = document.createElement("img");
+    mask.style.height="100px";
+    mask.style.width="100px";
     mask.setAttribute("src", "public/images/mask.png");
     mask.classList.add("mask")
     var board = document.querySelector(".game-page");
@@ -14,6 +16,8 @@ function spawnmasks(){
 }
 function spawnsan(){
     var san = document.createElement("img");
+    san.style.height="100px";
+    san.style.width="100px";
     san.setAttribute("src", "public/images/sanitizer.png");
     san.classList.add("san")
     var board = document.querySelector(".game-page");

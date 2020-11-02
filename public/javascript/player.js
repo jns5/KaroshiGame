@@ -1,3 +1,6 @@
+var score = document.querySelector(".score");
+let playerScore=0;
+
 var Key = {
     LEFT: 37,
     UP: 38,
@@ -66,6 +69,8 @@ function listener(evt, element, fn) {
       if (cross(pelletes[i], blob)){
         var board = document.querySelector(".game-page");
         board.removeChild(pelletes[i]);
+        playerScore++;
+        score.innerHTML = "Score : "+playerScore;
       }
 
     }

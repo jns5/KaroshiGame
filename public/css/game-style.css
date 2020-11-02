@@ -45,26 +45,16 @@ body{
     width: 50%;
 }
 
-.bar
+.score
 {
     width : 300px;
     height : 20px;
-    border:2px solid #000000;
-    background: #ffffff;
     position : absolute;
-    top: 30px;
+    color: #f0fff0;
+    top: 10px;
     left: 25px;
-}
-#healthbar
-{
-    width : 250px;
-    height : 20px;
-    border:1px solid #000000;
-    background-color: #1b9c31;
-    position : absolute;
-    top: 30px;
-    left: 25px;
-}
+} 
+
 h2{
     color: #cd39eb;
     float:right;

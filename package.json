@@ -1,0 +1,28 @@
+{
+  "name": "Virus.io",
+  "version": "1.0.0",
+  "description": "Play as a virus and get the highest score of each round. Shoot other players and eat pellets to increase your score, try to avoid the sanitizers and masks!",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server",
+    "dev":"nodemon server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/F28WP-Dubai-Karoshi/KaroshiGame.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/F28WP-Dubai-Karoshi/KaroshiGame/issues"
+  },
+  "homepage": "https://github.com/F28WP-Dubai-Karoshi/KaroshiGame#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "socket.io": "^2.3.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.6"
+  }
+}

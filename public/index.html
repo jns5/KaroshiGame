@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Krona+One&display=swap" rel="stylesheet"> <!--font style-->  
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lobby - Virus.io</title>
+    <script src="/socket.io/socket.io.js"></script>
+    <link rel="stylesheet" href="public/css/style.css">
+</head>
+
+<body class="index-page">
+    <div class = "stars"></div>
+    <nav class="optionbar"> 
+        <ul class="optionbar-main">
+            <li class=optionbar-list><a href="game-page.html" class="optionbar-text">Game</a></li>
+            <li class=optionbar-list><a href="#info_sec" class="optionbar-text">how to play</a></li>
+            <li class=optionbar-list><a href="#aboutus_sec" class="optionbar-text">about us</a></li>
+            <li class=optionbar-list><a href="#" class="optionbar-text">settings</a></li>
+        </ul>
+    </nav>
+
+    
+    <main>
+    <!-- <h1 id="info_sec"> Welcome to virus.io </h1> -->
+    <h1 id="info_sec" class="shadow"> virus.io </h1>
+    <!--
+    <div class="container-username">
+        <form action="">
+            <div><input type="text" id="username" placeholder="username"></div>
+            <div><input type="submit" id="submit" value="play"></div>
+        </form>
+    </div>
+-->
+
+    <div>
+        <h2 id="instructions">instructions</h2>
+        <div class="introtext">
+            <table>
+                <tr>
+                    <td class="num">1</td>
+                    <td class="rule">gain points by:</td>
+                    <td class="ans">eating pellets and shooting players</td>
+                </tr>
+                <tr>
+                    <td class="num">2</td>
+                    <td class="rule">lose points by:</td>
+                    <td class="ans">getting shot and colliding with sanitizers/masks</td>
+                </tr>
+            </table>    
+            <!--<p>Play as a virus and get the highest score of each round.</p>    
+            <p>Each round lasts 5 minutes and the top 10 players (those with the highest number of points) are displayed on a scoreboard.</p>
+            -->
+             
+        </div>
+    </div>
+    
+    <span style="height: 20px;"></span>
+
+    <div id="aboutus_sec">
+        <h2>a project for our F28WP course</h2>
+        <p>members</p>
+        <table class="about-us">
+            <tr>
+                <td class="members">Alora Tabuco</td>
+                <td class="members">John Mendez</td>
+                <td class="members">Mohamed Ratiq</td>
+                <td class="members">Naina Aggarwal</td>
+                <td class="members">Andrea Nabua</td>
+
+            </tr>
+        </table>
+       
+    </div>
+
+    </main>
+    
+</body>
+</html>

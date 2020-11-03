@@ -1,4 +1,7 @@
 //where we create a
+
+const socket = io();
+
 function spawnmasks(){
     var mask = document.createElement("img");
     mask.style.height="100px";

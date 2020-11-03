@@ -29,15 +29,7 @@ function spawnsan(){
     board.append(san);
     
 }
-var sanitizers = [];
-for (var i = 0; i < 10; i++ ) {
-    sanitizers.push(spawnsan());
-}
-var masks = [];
-for (var i = 0; i < 10; i++ ) {
-    masks.push(spawnmasks());
-    sanitizers.push(spawnsan());
-}
+
 function randoms()
 {
     var randomx = parseInt(Math.random()* window.innerWidth - window.innerWidth/4);

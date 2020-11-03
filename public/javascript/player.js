@@ -244,3 +244,12 @@ for (var i = 0; i < 200; i++ ){
 // for (let i = 0; i < pelletes.length; i++){
 //   if (cross(pelletes[i], blob = document.getElementById("icon")));
 // }
+
+sanitizers = new Array();
+for (var i = 0; i < 10; i++ ) {
+    sanitizers.push(spawnsan());
+}
+masks = new Array();
+for (var i = 0; i < 10; i++ ) {
+    masks.push(spawnmasks());
+}

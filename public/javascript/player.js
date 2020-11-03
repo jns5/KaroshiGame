@@ -1,5 +1,20 @@
 var score = document.querySelector(".score");
-let playerScore=0;
+var playerScore=0;
+var userName ="Anonymous";
+var name = document.getElementsByClassName("name-space");
+
+var submit = document.getElementById("submit");
+    submit.onclick = function(){
+    document.getElementById("username").style.visibility="hidden";
+    document.getElementById("transparent-overlay").style.visibility="hidden";
+    document.getElementById("username-form").style.visibility="hidden";
+    if(document.getElementById("username").value !==  ""){
+        userName = document.getElementById("username").value;
+    }
+    if(userName.length > 11){
+      userName=userName.substring(0,11)
+    }
+}
 
 var Key = {
     LEFT: 37,
@@ -70,12 +85,16 @@ function listener(evt, element, fn) {
         var board = document.querySelector(".game-page");
         board.removeChild(pelletes[i]);
         playerScore++;
-        score.innerHTML = "Score : "+playerScore;
+        score.innerHTML =  userName+" : "+playerScore;
       }
 
     }
 }
 listener('keydown', document, move);
+
+// window.addEventListener('keydown', function() {
+//   document.getElementById('showScroll').innerHTML = window.pageYOffset + 'px';
+// });
 
   function message()//to display the chat text
   {
@@ -151,7 +170,7 @@ listener('keydown', document, move);
 
   function movePointer(keycode){
       var pointer = document.getElementById("arrow");
-        var element = document.getElementById("icon");
+      var element = document.getElementById("icon");
         switch (keycode) {
         
         //Left
@@ -202,7 +221,6 @@ function cross(element1, element2) {
   return true;
 
 }
-
 
 function createpellet(){
   let pellet = document.createElement("img");

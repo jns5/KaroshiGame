@@ -4,6 +4,7 @@
     <title>Virus.io</title>
     <link rel="stylesheet" href="public/css/game-style.css">
     <link href="https://fonts.googleapis.com/css2?family=Krona+One&display=swap" rel="stylesheet"> <!--font style-->
+    <script src="public/javascript/main.js" defer></script>
     <script>
         const pellets = new Array();
     </script>
@@ -14,7 +15,7 @@
         <div id="username-form">
             <form>
                 <input type="text" id="username" value="" placeholder="enter your username"><br>
-                <input  type="button" id="submit"  value="play">
+                <input type="button" id="submit"  value="play">
             </form>
         </div>
    
@@ -61,7 +62,9 @@
     </div>
     <div id = "arrow"></div>
     <div id="laser"></div>
-    <img  src="public\images\redvir.png" id="icon" style="left:360px; top:70px;">
+    <div class="name-space"></div>
+        <img  src="public\images\redvir.png" id="icon" style="left:320px; top:70px;">
+    </div>
     <div class="chatbox">
         <form id="chat-list"></form>       
         <input id="chat-input" type="text"  placeholder="Type to chat" autocomplete="off" />
@@ -76,17 +79,8 @@
             });
         </script>
     </div>
-    <script src="public/javascript/main.js"></script>
-    <script src="public/javascript/pellets.js"></script>
-    <script src="public/javascript/spawn.js"></script>
-    <script src="public/javascript/player.js"></script>
-    <script type="text/javascript">
-        var submit = document.getElementById("submit");
-        submit.onclick = function(){
-            document.getElementById("username").style.visibility="hidden";
-            document.getElementById("transparent-overlay").style.visibility="hidden";
-            document.getElementById("username-form").style.visibility="hidden";
-        }
-    </script>
+    <script src="public/javascript/pellets.js" defer></script>
+    <script src="public/javascript/spawn.js" defer></script>
+    <script src="public/javascript/player.js" defer></script>
 </body>
 </html>

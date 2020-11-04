@@ -107,18 +107,24 @@ function listener(evt, element, fn) {
       if (cross(pelletes[i], blob)){
         var board = document.querySelector(".game-page");
         board.removeChild(pelletes[i]);
+        playerScore= playerScore + 5;
+        score.innerHTML = "Score : "+playerScore;
       }
     }
     for (let i = 0; i < masks.length; i++){
       if (cross(masks[i], blob)){
         var board = document.querySelector(".game-page");
         board.removeChild(masks[i]);
+          playerScore = playerScore - 2;
+        score.innerHTML = "Score : "+playerScore;
       }
     }
     for (let i = 0; i < sanitizers.length; i++){
       if (cross(sanitizers[i], blob)){
         var board = document.querySelector(".game-page");
         board.removeChild(sanitizers[i]);
+        playerScore= playerScore - 3;
+        score.innerHTML = "Score : "+playerScore;
       }
     }
 }

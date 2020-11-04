@@ -6,7 +6,7 @@
 function spawnmasks(){
     var board = document.querySelector(".game-page");
     let mask = document.createElement("img");
-    mask.setAttribute("src", "public/images/mask.png");
+    mask.setAttribute("src", "images/mask.png");
     mask.style.position = "absolute";
     board.appendChild(mask);
     var randomx = randoms()[0];

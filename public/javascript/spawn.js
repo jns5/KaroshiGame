@@ -6,6 +6,9 @@
 function spawnmasks(){
     var board = document.querySelector(".game-page");
     let mask = document.createElement("img");
+    mask.style.height="50px";
+    mask.style.width="70px";
+    mask.style.zIndex=-10;
     mask.setAttribute("src", "images/mask.png");
     mask.style.position = "absolute";
     board.appendChild(mask);
@@ -20,7 +23,10 @@ function spawnmasks(){
 function spawnsan(){
     var board = document.querySelector(".game-page");
     let san = document.createElement("img");
-    san.setAttribute("src", "public/images/sanitizer.png");
+    san.style.height="50px";
+    san.style.width="30px";
+    san.style.zIndex=-10;
+    san.setAttribute("src", "images/sanitizer.png");
     san.style.position = "absolute";
     board.appendChild(san);
     var randomx = randoms()[0];
@@ -33,7 +39,9 @@ function spawnsan(){
 
 function randoms()
 {
-    var randomx = parseInt(Math.random()* window.innerWidth - window.innerWidth/4);
-    var randomy = parseInt(Math.random()* window.innerHeight - window.innerHeight/2);
+    // var randomx = parseInt(Math.random()* window.innerWidth - window.innerWidth/4);
+    // var randomy = parseInt(Math.random()* window.innerHeight - window.innerHeight/2);
+    var randomx = parseInt(Math.random()* window.innerWidth);
+    var randomy = parseInt(Math.random()* window.innerHeight);
     return [randomx, randomy];
 }

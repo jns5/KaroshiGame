@@ -108,7 +108,7 @@ function listener(evt, element, fn) {
         var board = document.querySelector(".game-page");
         board.removeChild(pelletes[i]);
         playerScore= playerScore + 5;
-        score.innerHTML = "Score : "+playerScore;
+        score.innerHTML = userName+" : "+playerScore;
       }
     }
     for (let i = 0; i < masks.length; i++){
@@ -116,7 +116,7 @@ function listener(evt, element, fn) {
         var board = document.querySelector(".game-page");
         board.removeChild(masks[i]);
           playerScore = playerScore - 2;
-        score.innerHTML = "Score : "+playerScore;
+        score.innerHTML = userName+" : "+playerScore;
       }
     }
     for (let i = 0; i < sanitizers.length; i++){
@@ -124,7 +124,7 @@ function listener(evt, element, fn) {
         var board = document.querySelector(".game-page");
         board.removeChild(sanitizers[i]);
         playerScore= playerScore - 3;
-        score.innerHTML = "Score : "+playerScore;
+        score.innerHTML = userName+" : "+playerScore;
       }
     }
 }
@@ -262,7 +262,7 @@ function cross(element1, element2) {
 
 
 pelletes = new Array();
-for (var i = 0; i < 400; i++ ){
+for (var i = 0; i < 200; i++ ){
   pelletes.push(createpellet());
 }
 

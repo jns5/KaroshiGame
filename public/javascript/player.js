@@ -3,7 +3,7 @@ var playerScore=0;
 var userName ="Anonymous";
 var name = document.getElementsByClassName("name-space");
 
-const socket = io();
+//const socket = io();
 
 var submit = document.getElementById("submit");
     submit.onclick = function(){
@@ -247,7 +247,9 @@ function cross(element1, element2) {
 
 function createpellet(){
   let pellet = document.createElement("img");
-  pellet.setAttribute("src", "public/images/red.png");
+  pellet.style.height="200px";
+  pellet.style.width="200px";
+  pellet.setAttribute("src", "images/red.png");
   pellet.classList.add("pellet")
   var board = document.querySelector(".game-page");
   randomx = parseInt(Math.random()* window.innerWidth - window.innerWidth/3.5);
@@ -260,7 +262,7 @@ function createpellet(){
 
 }
 pelletes = new Array();
-for (var i = 0; i < 200; i++ ){
+for (var i = 0; i < 400; i++ ){
   pelletes.push(createpellet());
 }
 

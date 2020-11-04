@@ -1,12 +1,12 @@
 //where we create a
 
-const socket = io();
+// const socket = io();
 
 function spawnmasks(){
     var mask = document.createElement("img");
     mask.style.height="100px";
     mask.style.width="100px";
-    mask.setAttribute("src", "public/images/mask.png");
+    mask.setAttribute("src", "images/mask.png");
     mask.classList.add("mask")
     var board = document.querySelector(".game-page");
     var randomx = randoms()[0];
@@ -21,7 +21,7 @@ function spawnsan(){
     var san = document.createElement("img");
     san.style.height="100px";
     san.style.width="100px";
-    san.setAttribute("src", "public/images/sanitizer.png");
+    san.setAttribute("src", "images/sanitizer.png");
     san.classList.add("san")
     var board = document.querySelector(".game-page");
     var randomx = randoms()[0];

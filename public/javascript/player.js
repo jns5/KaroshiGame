@@ -107,10 +107,19 @@ function listener(evt, element, fn) {
       if (cross(pelletes[i], blob)){
         var board = document.querySelector(".game-page");
         board.removeChild(pelletes[i]);
-        playerScore++;
-        score.innerHTML =  userName+" : "+playerScore;
       }
-
+    }
+    for (let i = 0; i < masks.length; i++){
+      if (cross(masks[i], blob)){
+        var board = document.querySelector(".game-page");
+        board.removeChild(masks[i]);
+      }
+    }
+    for (let i = 0; i < sanitizers.length; i++){
+      if (cross(sanitizers[i], blob)){
+        var board = document.querySelector(".game-page");
+        board.removeChild(sanitizers[i]);
+      }
     }
 }
 listener('keydown', document, move);
@@ -245,30 +254,11 @@ function cross(element1, element2) {
 
 }
 
-function createpellet(){
-  let pellet = document.createElement("img");
-  pellet.style.height="200px";
-  pellet.style.width="200px";
-  pellet.setAttribute("src", "images/red.png");
-  pellet.classList.add("pellet")
-  var board = document.querySelector(".game-page");
-  randomx = parseInt(Math.random()* window.innerWidth - window.innerWidth/3.5);
-  randomy = parseInt(Math.random()* window.innerHeight - window.innerHeight/1.5);
-  pellet.style.left = randomx + "px";
-  pellet.style.top  = randomy + "px";
-  board.appendChild(pellet);
-  console.log(randomx, randomy);
-  return pellet;
 
-}
 pelletes = new Array();
 for (var i = 0; i < 400; i++ ){
   pelletes.push(createpellet());
 }
-
-// for (let i = 0; i < pelletes.length; i++){
-//   if (cross(pelletes[i], blob = document.getElementById("icon")));
-// }
 
 sanitizers = new Array();
 for (var i = 0; i < 10; i++ ) {

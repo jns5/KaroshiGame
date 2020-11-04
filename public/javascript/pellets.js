@@ -2,7 +2,7 @@
 function createpellet(){
     var board = document.querySelector(".game-page");
     let pellet = document.createElement("img");
-    pellet.setAttribute("src", "public/images/red.png");
+    pellet.setAttribute("src", "images/red.png");
     pellet.style.position = "absolute";
     board.appendChild(pellet);
     randomx = parseInt(Math.random()* window.innerWidth - window.innerWidth/3.5);

@@ -2,35 +2,33 @@
 
 // const socket = io();
 
+//where we create both the debuffs
 function spawnmasks(){
-    var mask = document.createElement("img");
-    mask.style.height="100px";
-    mask.style.width="100px";
-    mask.setAttribute("src", "images/mask.png");
-    mask.classList.add("mask")
     var board = document.querySelector(".game-page");
+    let mask = document.createElement("img");
+    mask.setAttribute("src", "public/images/mask.png");
+    mask.style.position = "absolute";
+    board.appendChild(mask);
     var randomx = randoms()[0];
     var randomy = randoms()[1];
     mask.style.left = randomx + "px";
     mask.style.top = randomy + "px";
     console.log(randomx, randomy);
-    board.append(mask);
+    return mask;
     
 }
 function spawnsan(){
-    var san = document.createElement("img");
-    san.style.height="100px";
-    san.style.width="100px";
-    san.setAttribute("src", "images/sanitizer.png");
-    san.classList.add("san")
     var board = document.querySelector(".game-page");
+    let san = document.createElement("img");
+    san.setAttribute("src", "public/images/sanitizer.png");
+    san.style.position = "absolute";
+    board.appendChild(san);
     var randomx = randoms()[0];
     var randomy = randoms()[1];
     san.style.left = randomx + "px";
     san.style.top = randomy + "px";
     console.log(randomx, randomy);
-    board.append(san);
-    
+    return san;
 }
 
 function randoms()

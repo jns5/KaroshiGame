@@ -1,16 +1,14 @@
 # virus.io
 
-Play as a virus and get the highest score of each round. Shoot other players and eat pellets to increase your score, try to avoid the sanitizers and masks! 
+Play as a virus and get the highest score of each round. Shoot the sanitizer and masks to prevent losing points and eat pellets to increase your score, try to avoid the sanitizers and masks! 
 
-Each round lasts 5 minutes and the top 10 players are displayed on a scoreboard. 
+Each round lasts 5 minutes and the top 10 players are displayed on the leaderboard. 
 
 #### Gain points:
 - By eating pellets
-- By shooting other players 
 
 #### Lose points:
 - By colliding with sanitizer and mask
-- By getting shot
 
 
 #### Virus types (Players choose their virus):

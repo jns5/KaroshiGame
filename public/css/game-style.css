@@ -55,8 +55,8 @@ body{
     height : 20px;
     position : absolute;
     color: #f0fff0;
-    top: 10px;
-    left: 25px;
+    top: 250px;
+    left: 900px;
     font-size: 30px;
     z-index: 5;
 } 
@@ -153,4 +153,12 @@ h2{
     font-size: 20px;
 } */
 
+.game-board {
+    height: 600px;
+    width: 850px;
+    background-color: darkblue;
+    position: absolute;
+    z-index: -7;
+    padding: 5px;
+}
 

@@ -39,7 +39,7 @@ function spawnsan(){
 
 function randoms()
 {
-    var randomx = parseInt(Math.random()* 800);
-    var randomy = parseInt(Math.random()* 500);
+    var randomx = parseInt(Math.random()* 1000);
+    var randomy = parseInt(Math.random()* 650);
     return [randomx, randomy];
 }

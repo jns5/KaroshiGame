@@ -8,10 +8,8 @@ function createpellet(){
     pellet.setAttribute("src", "images/red.png");
     pellet.style.position = "absolute";
     board.appendChild(pellet);
-    // randomx = parseInt(Math.random()* window.innerWidth - window.innerWidth/3.5);
-    // randomy = parseInt(Math.random()* window.innerHeight - window.innerHeight/1.5);
-    randomx = parseInt(Math.random()* window.innerWidth);
-    randomy = parseInt(Math.random()* window.innerHeight);
+    randomx = randoms()[0];
+    randomy = randoms()[1];
     pellet.style.left = randomx + "px";
     pellet.style.top  = randomy + "px";
     console.log(randomx, randomy);

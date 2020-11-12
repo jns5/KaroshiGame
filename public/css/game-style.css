@@ -125,6 +125,7 @@ h2{
     width: 100px;
     height: 100px;
     z-index: -1;
+    border-radius:20%;
 }   
    
 

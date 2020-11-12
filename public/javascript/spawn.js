@@ -39,8 +39,6 @@ function spawnsan(){
 
 function randoms()
 {
-    // var randomx = parseInt(Math.random()* window.innerWidth - window.innerWidth/4);
-    // var randomy = parseInt(Math.random()* window.innerHeight - window.innerHeight/2);
     var randomx = parseInt(Math.random()* window.innerWidth);
     var randomy = parseInt(Math.random()* window.innerHeight);
     return [randomx, randomy];

@@ -143,8 +143,8 @@ listener('keydown', document, move);
   function playerShootUp(){ // to shoot bullets upwards
     var element = document.getElementById("icon");
     var laser = document.getElementById("laser");
-    laser.style.top = parseInt(element.style.top) + 230 + 'px';
-    laser.style.left = parseInt(element.style.left) + 290 +'px';
+    laser.style.top = parseInt(element.style.top) + 50 + 'px';
+    laser.style.left = parseInt(element.style.left) + 50 +'px';
     let start = Date.now();
 
     let timer = setInterval(function() {
@@ -159,8 +159,8 @@ listener('keydown', document, move);
   function playerShootDown(){ // to shoot bullets downwards
     var element = document.getElementById("icon");
     var laser = document.getElementById("laser");
-    laser.style.top = parseInt(element.style.top) + 420 + 'px';
-    laser.style.left = parseInt(element.style.left) + 290 +'px';
+    laser.style.top = parseInt(element.style.top) + 50 + 'px';
+    laser.style.left = parseInt(element.style.left) + 50 +'px';
     let start = Date.now();
 
     let timer = setInterval(function() {
@@ -176,8 +176,8 @@ listener('keydown', document, move);
     var element = document.getElementById("icon");
     document.getElementById("laser").style.transform = "rotate(90deg)";
     var laser = document.getElementById("laser");
-    laser.style.top = parseInt(element.style.top) + 300 + 'px';
-    laser.style.left = parseInt(element.style.left) + 410 +'px';
+    laser.style.top = parseInt(element.style.top) + 50 + 'px';
+    laser.style.left = parseInt(element.style.left) + 50 +'px';
     let start = Date.now();
 
     let timer = setInterval(function() {
@@ -193,8 +193,8 @@ listener('keydown', document, move);
     var element = document.getElementById("icon");
     document.getElementById("laser").style.transform = "rotate(90deg)";
     var laser = document.getElementById("laser");
-    laser.style.top = parseInt(element.style.top) + 300 + 'px';
-    laser.style.left = parseInt(element.style.left) + 180 +'px';
+    laser.style.top = parseInt(element.style.top) + 50 + 'px';
+    laser.style.left = parseInt(element.style.left) + 50 +'px';
     let start = Date.now();
 
     let timer = setInterval(function() {
@@ -214,26 +214,26 @@ listener('keydown', document, move);
         //Left
         case 37:
             document.getElementById("arrow").style.transform = "rotate(135deg)";
-            pointer.style.top = parseInt(element.style.top) + 300 + 'px';
-            pointer.style.left = parseInt(element.style.left) + 180 +'px';
+            pointer.style.top = parseInt(element.style.top) + 50 + 'px';
+            pointer.style.left = parseInt(element.style.left) + 50 +'px';
         break;
         //Right
         case 39:
             document.getElementById("arrow").style.transform = "rotate(-45deg)";
-            pointer.style.top = parseInt(element.style.top) + 300 + 'px';
-            pointer.style.left = parseInt(element.style.left) + 410 +'px';
+            pointer.style.top = parseInt(element.style.top) + 50 + 'px';
+            pointer.style.left = parseInt(element.style.left) + 50 +'px';
         break;
         //Up
         case 38:
             document.getElementById("arrow").style.transform = "rotate(-135deg)";
-            pointer.style.top = parseInt(element.style.top) + 200  + 'px';
-            pointer.style.left = parseInt(element.style.left) + 290 +'px';
+            pointer.style.top = parseInt(element.style.top) + 50  + 'px';
+            pointer.style.left = parseInt(element.style.left) + 50 +'px';
         break;
         //Down
         case 40:
             document.getElementById("arrow").style.transform = "rotate(45deg)";
-            pointer.style.top = parseInt(element.style.top) + 400 + 'px';
-            pointer.style.left = parseInt(element.style.left) + 290 +'px';
+            pointer.style.top = parseInt(element.style.top) + 50 + 'px';
+            pointer.style.left = parseInt(element.style.left) + 50 +'px';
         break;
 }}
 

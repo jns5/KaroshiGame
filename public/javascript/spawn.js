@@ -4,7 +4,7 @@
 
 //where we create both the debuffs
 function spawnmasks(){
-    var board = document.querySelector(".game-page");
+    var board = document.querySelector(".game-board");
     let mask = document.createElement("img");
     mask.style.height="50px";
     mask.style.width="70px";
@@ -21,7 +21,7 @@ function spawnmasks(){
     
 }
 function spawnsan(){
-    var board = document.querySelector(".game-page");
+    var board = document.querySelector(".game-board");
     let san = document.createElement("img");
     san.style.height="50px";
     san.style.width="30px";
@@ -39,7 +39,7 @@ function spawnsan(){
 
 function randoms()
 {
-    var randomx = parseInt(Math.random()* window.innerWidth);
-    var randomy = parseInt(Math.random()* window.innerHeight);
+    var randomx = parseInt(Math.random()* 800);
+    var randomy = parseInt(Math.random()* 500);
     return [randomx, randomy];
 }

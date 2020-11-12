@@ -109,6 +109,8 @@ function listener(evt, element, fn) {
         board.removeChild(pelletes[i]);
         playerScore= playerScore + 5;
         score.innerHTML = userName+" : "+playerScore;
+        pelletes.splice(i, 1);
+        pelletes.push(createpellet());
       }
     }
     for (let i = 0; i < masks.length; i++){
@@ -117,6 +119,8 @@ function listener(evt, element, fn) {
         board.removeChild(masks[i]);
           playerScore = playerScore - 2;
         score.innerHTML = userName+" : "+playerScore;
+         masks.splice(i, 1);
+        masks.push(spawnmasks());
       }
     }
     for (let i = 0; i < sanitizers.length; i++){
@@ -125,6 +129,8 @@ function listener(evt, element, fn) {
         board.removeChild(sanitizers[i]);
         playerScore= playerScore - 3;
         score.innerHTML = userName+" : "+playerScore;
+          sanitizers.splice(i, 1);
+        sanitizers.push(spawnsan());
       }
     }
 }

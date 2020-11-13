@@ -66,22 +66,26 @@ function listener(evt, element, fn) {
           blob.style.left = parseInt(blob.style.left) - 5 + 'px';
           movePointer(keycode);
           direction = "Left";
+          checkBoundary(blob,direction);
         break;
         case Key.UP:
           blob.style.top = parseInt(blob.style.top) - 5 + 'px';
           movePointer(keycode);
           direction = "Up";
+          checkBoundary(blob,direction);
         break;
         case Key.RIGHT:
           blob.style.left = parseInt(blob.style.left) + 5 + 'px';
           movePointer(keycode);
           direction = "Right";
+          checkBoundary(blob,direction);
 
         break;
         case Key.DOWN:
           blob.style.top = parseInt(blob.style.top) + 5 + 'px';
           movePointer(keycode);
           direction = "Down";
+          checkBoundary(blob,direction);
         break;
         case 32: // space button
             
@@ -133,6 +137,31 @@ listener('keydown', document, move);
 // window.addEventListener('keydown', function() {
 //   document.getElementById('showScroll').innerHTML = window.pageYOffset + 'px';
 // });
+  function checkBoundary(element, direction){
+    var blob = document.getElementById("icon");
+    switch (direction) {
+      case "Left":
+        if(10 > parseInt(blob.style.left)){
+          blob.style.left = parseInt(blob.style.left) + 5 + 'px';
+        }
+      break;
+      case "Right":
+        if(950 < parseInt(blob.style.left)){
+          blob.style.left = parseInt(blob.style.left) - 5 + 'px';
+        }
+      break;
+      case "Up":
+        if(10 > parseInt(blob.style.top)){
+          blob.style.top = parseInt(blob.style.top) + 5 + 'px';
+        }
+      break;
+      case "Down":
+        if(600 < parseInt(blob.style.top)){
+          blob.style.top = parseInt(blob.style.top) - 5 + 'px';
+        }
+      break;
+    }
+  }
 
   function message()//to display the chat text
   {

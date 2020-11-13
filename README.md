@@ -24,3 +24,5 @@ Each round lasts 5 minutes and the top 10 players are displayed on the leaderboa
 * [Mohamed Ratiq](https://github.com/mrt2000HW)
 * [Andrea Nabua](https://github.com/AndreaNabua)
 
+### Game Page
+![](mockup/game.png)

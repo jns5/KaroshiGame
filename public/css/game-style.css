@@ -61,14 +61,14 @@ body{
 
 .score
 {   text-align: center;
-    padding: 10px;
+    padding: 1px;
     margin: auto;
     width : 300px;
     height : auto;
     position : absolute;
-    color: #f0fff0;
-    top: 20px;
-    right: 100px;
+    color: #ffffff;
+    top: 18px;
+    right: 105px;
     font-size: 25px;
     z-index: 0;
     
@@ -85,7 +85,7 @@ h2{
 
 #board
 {
-    background-color: #9c24b4a8;
+    background-color: #631572a8;
     font-size: 12px;
     position:absolute;
     width: 250px;
@@ -120,7 +120,7 @@ h2{
     height: 300px;
     bottom: 0px;
     left: 0px;
-    background-color:#0d1f83be;
+    background-color:#0c1a69b0;
     border-radius: 10px;
     border: 2px solid whitesmoke; 
     z-index: -1;
@@ -188,7 +188,7 @@ h2{
 .game-board {
     height: 700px;
     width: 1050px;
-    background-color: rgba(11, 11, 100, 0.87);
+    background-color: rgba(14, 14, 65, 0.87);
     position: absolute;
     z-index: -7;
     padding: 5px;

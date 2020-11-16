@@ -6,6 +6,7 @@
 function spawnmasks(){
     var board = document.querySelector(".game-board");
     let mask = document.createElement("img");
+    mask.className = "masks";
     mask.style.height="50px";
     mask.style.width="70px";
     mask.style.zIndex=-10;
@@ -23,6 +24,7 @@ function spawnmasks(){
 function spawnsan(){
     var board = document.querySelector(".game-board");
     let san = document.createElement("img");
+    san.className = "sanitizers";
     san.style.height="50px";
     san.style.width="30px";
     san.style.zIndex=-10;

@@ -136,6 +136,7 @@ function listener(evt, element, fn) {
           sanitizers.splice(i, 1);
         sanitizers.push(spawnsan());
       }
+      
     }
 }
 listener('keydown', document, move);
@@ -143,31 +144,31 @@ listener('keydown', document, move);
 // window.addEventListener('keydown', function() {
 //   document.getElementById('showScroll').innerHTML = window.pageYOffset + 'px';
 // });
-  function checkBoundary(element, direction){
-    var blob = document.getElementById("icon");
-    switch (direction) {
-      case "Left":
-        if(10 > parseInt(blob.style.left)){
-          blob.style.left = parseInt(blob.style.left) + 5 + 'px';
-        }
-      break;
-      case "Right":
-        if(950 < parseInt(blob.style.left)){
-          blob.style.left = parseInt(blob.style.left) - 5 + 'px';
-        }
-      break;
-      case "Up":
-        if(10 > parseInt(blob.style.top)){
-          blob.style.top = parseInt(blob.style.top) + 5 + 'px';
-        }
-      break;
-      case "Down":
-        if(600 < parseInt(blob.style.top)){
-          blob.style.top = parseInt(blob.style.top) - 5 + 'px';
-        }
-      break;
-    }
+function checkBoundary(element, direction){
+  // var blob = document.getElementById("icon");
+  switch (direction) {
+    case "Left":
+      if(10 > parseInt(element.style.left)){
+        element.style.left = parseInt(element.style.left) + 5 + 'px';
+      }
+    break;
+    case "Right":
+      if(950 < parseInt(element.style.left)){
+        element.style.left = parseInt(element.style.left) - 5 + 'px';
+      }
+    break;
+    case "Up":
+      if(10 > parseInt(element.style.top)){
+        element.style.top = parseInt(element.style.top) + 5 + 'px';
+      }
+    break;
+    case "Down":
+      if(600 < parseInt(element.style.top)){
+        element.style.top = parseInt(element.style.top) - 5 + 'px';
+      }
+    break;
   }
+}
 
   function message()//to display the chat text
   {
@@ -184,11 +185,12 @@ listener('keydown', document, move);
 
     let timer = setInterval(function() {
     let timePassed = Date.now() - start;
-
+    laser.style.top = parseInt(laser.style.top) -8 +'px';
+    
+    shootSanitizer();
+    shootMask();
     if (timePassed >= 2000)
     {clearInterval(timer); return;}
-    laser.style.top = parseInt(laser.style.top) -8 +'px';
-
   }, 20);}
 
   function playerShootDown(){ // to shoot bullets downwards
@@ -201,10 +203,14 @@ listener('keydown', document, move);
     let timer = setInterval(function() {
     let timePassed = Date.now() - start;
 
-    if (timePassed >= 2000)
-    {clearInterval(timer); return;}
+    
     laser.style.top = parseInt(laser.style.top) +8 +'px';
 
+    shootSanitizer();
+    shootMask();
+    if (timePassed >= 2000)
+    {clearInterval(timer); return;}
+    
   }, 20);}
 
   function playerShootRight(){// to shoot bullets to the right
@@ -222,6 +228,9 @@ listener('keydown', document, move);
     {clearInterval(timer); return;}
     laser.style.left = parseInt(laser.style.left) +8 +'px';
 
+    shootSanitizer();
+
+    shootMask();
   }, 20);}
 
   function playerShootLeft(){ // to shoot bullets to the left
@@ -238,6 +247,10 @@ listener('keydown', document, move);
     if (timePassed >= 2000)
     {clearInterval(timer); return;}
     laser.style.left = parseInt(laser.style.left) -8 +'px';
+
+    shootSanitizer();
+
+    shootMask();
 
   }, 20);}
 
@@ -295,7 +308,25 @@ function cross(element1, element2) {
 
 }
 
+function shootSanitizer (){
+  for(let i = 0; i < sanitizers.length; i++){
+    if(cross(sanitizers[i],laser)){
+      var board = document.querySelector(".game-board");
+      board.removeChild(sanitizers[i]);
+      sanitizers.push(spawnsan());
+    }
+  }
+}
 
+function shootMask(){
+  for (let i = 0; i < masks.length; i++){
+    if (cross(masks[i], laser)){
+      var board = document.querySelector(".game-board");
+      board.removeChild(masks[i]);
+      masks.push(spawnmasks());
+    }
+  }
+}
 pelletes = new Array();
 for (var i = 0; i < 200; i++ ){
   pelletes.push(createpellet());
@@ -309,3 +340,4 @@ masks = new Array();
 for (var i = 0; i < 10; i++ ) {
     masks.push(spawnmasks());
 }
+

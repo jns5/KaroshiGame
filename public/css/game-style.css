@@ -141,26 +141,34 @@ h2{
 #chat-input:hover{
     opacity: 1;
 }*/
-
+.pellets{
+    animation: wigglePellets 1s ease-in-out infinite;
+}
 .sanitizers{
-    animation: wiggleSan 3s ease-in-out infinite;
+    animation: wiggleSan 2s ease-in-out infinite;
 }
 .masks{
     animation: wiggleMask 3s ease-in-out infinite;
+}
+@keyframes wigglePellets{
+    0% {transform: translate(0.5px,0px);}
+    30% {transform: translate(-0.5px,0.5px);}
+    70% {transform: translate(0px,-0.5px);}
+    100% {transform: translate(0.5px,0px);}
 }
 @keyframes wiggleSan {
     0% {transform: translate(2px,0px);}
     25% {transform: translate(0px,2px);}
     50% {transform: translate(-2px,0px);}
     75% {transform: translate(0px,-2px);}
-    100% {transform: translate(1px,-1px);}
+    100% {transform: translate(2px, 0px);}
 }
 @keyframes wiggleMask {
     0% {transform: translate(-3px,0px);}
-    25% {transform: translate(2px,0px);}
-    50% {transform: translate(-2px,0px);}
+    25% {transform: translate(3px,0px);}
+    50% {transform: translate(-3px,0px);}
     75% {transform: translate(+3px,0px);}
-    100% {transform: translate(1px,0px);}
+    100% {transform: translate(-3px,0px);}
 }
 #send{
     text-align: center;

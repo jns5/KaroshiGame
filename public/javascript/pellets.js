@@ -2,6 +2,7 @@
 function createpellet(){
     var board = document.querySelector(".game-board");
     let pellet = document.createElement("img");
+    pellet.className = "pellets";
     pellet.style.height="20px";
     pellet.style.width="20px";
     pellet.style.zIndex=-10;

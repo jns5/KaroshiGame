@@ -163,9 +163,9 @@ h2{
 
 #laser
 {
-    background: greenyellow;
+    background: white;
     width: 5px;
-    height: 10px;
+    height: 5px;
     position: absolute;
 
 }

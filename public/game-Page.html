@@ -7,7 +7,8 @@
     <script src="../socket.io/socket.io.js"></script>
     <script src="javascript/main.js" defer></script>
     <script>
-        const socket = io.connect('http://localhost:3000');
+        const socket = io();
+        //const socket = io.connect('http://localhost:3000');
     </script>
 </head>
 <body  class="game-page" onload="" onkeydown="" onkeyup="">
@@ -27,36 +28,44 @@
             <div id="board">
                 <table>
                     <tr>
-                        <th>Player 1</th>
+                        <th id="player1">Player 1</th>
                         <th>- </th>
+                        <th id="player1-score">null</th>
                     </tr>
                     <tr>
                         <th>Player 2</th>
                         <th>- </th>
+                        <th>null</th>
                     </tr>
                     <tr>
                         <th>Player 3</th>
                         <th>- </th>
+                        <th>null</th>
                     </tr>
                     <tr>
                         <th>Player 4</th>
                         <th>- </th>
+                        <th>null</th>
                     </tr>
                     <tr>
                         <th>Player 5</th>
                         <th>- </th>
+                        <th>null</th>
                     </tr>
                     <tr>
                         <th>Player 6</th>
                         <th>- </th>
+                        <th>null</th>
                     </tr>
                     <tr>
                         <th>Player 7</th>
                         <th>- </th>
+                        <th>null</th>
                     </tr>
                     <tr>
                         <th>Player 8</th>
                         <th>- </th>
+                        <th>null</th>
                     </tr>
                 </table>
             </div>

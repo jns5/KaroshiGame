@@ -16,6 +16,7 @@ var submit = document.getElementById("submit");
     if(userName.length > 11){
       userName=userName.substring(0,11)
     }
+    socket.emit('user.join', userName);
 }
 
 var Key = {

@@ -142,13 +142,13 @@ h2{
     opacity: 1;
 }*/
 .pellets{
-    animation: wigglePellets 1s ease-in-out infinite;
+    animation: wigglePellets 3s ease-in-out infinite;
 }
 .sanitizers{
-    animation: wiggleSan 2s ease-in-out infinite;
+    animation: wiggleSan 3s ease-in-out infinite;
 }
 .masks{
-    animation: wiggleMask 3s ease-in-out infinite;
+    animation: wiggleMask 4s ease-in-out infinite;
 }
 @keyframes wigglePellets{
     0% {transform: translate(0.5px,0px);}

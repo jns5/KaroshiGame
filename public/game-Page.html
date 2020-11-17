@@ -4,10 +4,10 @@
     <title>Virus.io</title>
     <link rel="stylesheet" href="css/game-style.css">
     <link href="https://fonts.googleapis.com/css2?family=Krona+One&display=swap" rel="stylesheet"> <!--font style-->
-    <script src="/socket.io/socket.io.js"></script>
+    <script src="../socket.io/socket.io.js"></script>
     <script src="javascript/main.js" defer></script>
     <script>
-        const pellets = new Array();
+        const socket = io.connect('http://localhost:3000');
     </script>
 </head>
 <body  class="game-page" onload="" onkeydown="" onkeyup="">

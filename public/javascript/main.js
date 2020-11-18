@@ -82,7 +82,7 @@ socket.on('new-position', function(data){
                     checkBoundary(blob,direction);
                     break;
                 case Key.UP:
-                    socket.emit('keyPress', {inputId: 'up', state: true};
+                    socket.emit('keyPress', {inputId: 'up', state: true});
                     //blob.style.top = parseInt(blob.style.top) - 5 + 'px';
                     movePointer(keycode);
                     direction = "Up";

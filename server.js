@@ -63,7 +63,7 @@ var Player = function(id) {
 const io = require("socket.io")(serv);
 
 io.sockets.on("connection", function(socket) {
-    io.emit('add-player', "hello");    
+    socket.emit('add-player', "hello");    
     socket.id = Math.random();
     SOCKET_LIST[socket.id] = socket;
     console.log(SOCKET_LIST[socket.id].id + " joined the game");
@@ -95,10 +95,10 @@ io.sockets.on("connection", function(socket) {
             player.pressingRight = data.state;
         }
         if(data.inputId === 'up'){
-            playerShootDown.pressingUp = data.state;
+            player.pressingUp = data.state;
         }
         if(data.inputId === 'down'){
-            playerShootDown.pressingDown = data.state;
+            player.pressingDown = data.state;
         }
 
     })

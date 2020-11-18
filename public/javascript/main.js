@@ -20,7 +20,7 @@ socket.on('new-position', function(data){
     var board = document.querySelector('.game-board');
     
     // delete all viruses and place new ones
-    var prev_viruses = document.getElementsByClassName('icon');
+    var prev_viruses = document.querySelectorAll('.icon');
     for(var j = 0; j< prev_viruses.length; j++){
         board.removeChild(prev_viruses[i]);
     }

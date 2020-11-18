@@ -28,18 +28,62 @@ app.use(express.static('public'));
 //    console.log("Running the server, port = " + PORT)
 //);
 
-
+//list of players
+var SOCKET_LIST = {};
+var PLAYER_LIST = {};
+var Player = function(id) {
+    var self = {
+        x: parseInt(Math.random()* 950),
+        y: parseInt(Math.random()* 600),
+        id : id,
+        number : "" + Math.floor(10* Math.random())
+    }
+    return self;
+}
 //loading socket.io and binding to server
 const io = require("socket.io")(serv);
-var SOCKET_LIST = {};
 
 io.sockets.on("connection", function(socket) {
-    console.log("new connection");
-    
+        
+    socket.id = Math.random();
+    SOCKET_LIST[socket.id] = socket;
+    console.log(SOCKET_LIST[socket.id].id + " joined the game");
+
+    var player = Player(socket.id);
+    PLAYER_LIST[socket.id] = player;
+
     // listens when a user enters username
     socket.on('user.join', function(userName) {
         socket.userName = userName;
         console.log("hello" + userName);
     })
+    
+    
+    
+    
+    socket.on('disconnect', function (){
+        console.log(SOCKET_LIST[socket.id].id + " left the game")
+        delete SOCKET_LIST[socket.id];
+        delete PLAYER_LIST[socket.id];
+    })
+
 });
 
+setInterval(function(){
+    var pack = [];
+    for(var i in PLAYER_LIST){
+        var player = PLAYER_LIST[i];
+        player.x ++;
+        player.y ++;
+        pack.push({
+            x: player.x,
+            y: player.y,
+            number: player.number
+        })
+    }
+
+    for(var i in SOCKET_LIST){
+        var socket = SOCKET_LIST[i];
+        socket.emit('new-position', pack);
+    }
+}, 40)

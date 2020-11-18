@@ -44,7 +44,7 @@ var Player = function(id) {
 const io = require("socket.io")(serv);
 
 io.sockets.on("connection", function(socket) {
-        
+    io.emit('add-player', "hello");    
     socket.id = Math.random();
     SOCKET_LIST[socket.id] = socket;
     console.log(SOCKET_LIST[socket.id].id + " joined the game");
@@ -55,6 +55,7 @@ io.sockets.on("connection", function(socket) {
     // listens when a user enters username
     socket.on('user.join', function(userName) {
         socket.userName = userName;
+    //    socket.emit('add-player', userName);
         console.log("hello" + userName);
     })
     
@@ -86,4 +87,4 @@ setInterval(function(){
         var socket = SOCKET_LIST[i];
         socket.emit('new-position', pack);
     }
-}, 40)
+}, 1000/25)

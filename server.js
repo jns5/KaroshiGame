@@ -87,6 +87,22 @@ io.sockets.on("connection", function(socket) {
         delete PLAYER_LIST[socket.id];
     })
 
+    socket.on('keyPress', function (data){
+        if(data.inputId === 'left'){
+            player.pressingLeft = data.state;
+        }
+        if(data.inputId === 'right'){
+            player.pressingRight = data.state;
+        }
+        if(data.inputId === 'up'){
+            playerShootDown.pressingUp = data.state;
+        }
+        if(data.inputId === 'down'){
+            playerShootDown.pressingDown = data.state;
+        }
+
+    })
+
 });
 
 setInterval(function(){

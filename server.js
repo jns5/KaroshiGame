@@ -36,7 +36,26 @@ var Player = function(id) {
         x: parseInt(Math.random()* 950),
         y: parseInt(Math.random()* 600),
         id : id,
-        number : "" + Math.floor(10* Math.random())
+        number : "" + Math.floor(10* Math.random()),
+        pressingRight: false,
+        pressingLeft: false,
+        pressingUp: false,
+        pressingDown: false,
+        maxSpd: 10
+    }
+    self.updatePosition = function() {
+        if(self.pressingRight){
+            self.x += self.maxSpd;
+        }
+        if(self.pressingLeft){
+            self.x -= self.maxSpd;
+        }
+        if(self.pressingUp){
+            self.y -= self.maxSpd;
+        }
+        if(self.pressingDown){
+            self.y += self.maxSpd;
+        }
     }
     return self;
 }
@@ -48,11 +67,11 @@ io.sockets.on("connection", function(socket) {
     socket.id = Math.random();
     SOCKET_LIST[socket.id] = socket;
     console.log(SOCKET_LIST[socket.id].id + " joined the game");
-
+    //add player to player list
     var player = Player(socket.id);
     PLAYER_LIST[socket.id] = player;
 
-    // listens when a user enters username
+    // listens when a user enters username, for debugging
     socket.on('user.join', function(userName) {
         socket.userName = userName;
     //    socket.emit('add-player', userName);
@@ -74,8 +93,7 @@ setInterval(function(){
     var pack = [];
     for(var i in PLAYER_LIST){
         var player = PLAYER_LIST[i];
-        player.x ++;
-        player.y ++;
+        player.updatePosition;
         pack.push({
             x: player.x,
             y: player.y,

@@ -19,7 +19,7 @@ var submit = document.getElementById("submit");
     socket.emit('user.join', userName);
 }
 
-var Key = {
+/* var Key = {
     LEFT: 37,
     UP: 38,
     RIGHT: 39,
@@ -40,7 +40,7 @@ function listener(evt, element, fn) {
     var keycode = evt.keyCode || evt.which; 
   
     var info = document.getElementById("chat-list");
-    var blob = document.getElementById("icon");
+    var blob = document.querySelector(".icon");
     // var direction = "Up";
     switch (keycode) {
         case Key.LEFT:
@@ -120,7 +120,7 @@ function listener(evt, element, fn) {
       
     }
 }
-listener('keydown', document, move);
+listener('keydown', document, move); */
 
 // window.addEventListener('keydown', function() {
 //   document.getElementById('showScroll').innerHTML = window.pageYOffset + 'px';
@@ -158,7 +158,7 @@ function checkBoundary(element, direction){
   }
   
   function playerShootUp(){ // to shoot bullets upwards
-    var element = document.getElementById("icon");
+    var element = document.querySelector(".icon");
     var laser = document.getElementById("laser");
     laser.style.top = parseInt(element.style.top) + 50 + 'px';
     laser.style.left = parseInt(element.style.left) + 50 +'px';
@@ -175,7 +175,7 @@ function checkBoundary(element, direction){
   }, 20);}
 
   function playerShootDown(){ // to shoot bullets downwards
-    var element = document.getElementById("icon");
+    var element = document.querySelector(".icon");
     var laser = document.getElementById("laser");
     laser.style.top = parseInt(element.style.top) + 50 + 'px';
     laser.style.left = parseInt(element.style.left) + 50 +'px';
@@ -195,7 +195,7 @@ function checkBoundary(element, direction){
   }, 20);}
 
   function playerShootRight(){// to shoot bullets to the right
-    var element = document.getElementById("icon");
+    var element = document.querySelector(".icon");
     document.getElementById("laser").style.transform = "rotate(90deg)";
     var laser = document.getElementById("laser");
     laser.style.top = parseInt(element.style.top) + 50 + 'px';
@@ -215,7 +215,7 @@ function checkBoundary(element, direction){
   }, 20);}
 
   function playerShootLeft(){ // to shoot bullets to the left
-    var element = document.getElementById("icon");
+    var element = document.querySelector(".icon");
     document.getElementById("laser").style.transform = "rotate(90deg)";
     var laser = document.getElementById("laser");
     laser.style.top = parseInt(element.style.top) + 50 + 'px';
@@ -237,7 +237,7 @@ function checkBoundary(element, direction){
 
   function movePointer(keycode){
       var pointer = document.getElementById("arrow");
-      var element = document.getElementById("icon");
+      var element = document.querySelector(".icon");
         switch (keycode) {
         
         //Left

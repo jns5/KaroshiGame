@@ -28,26 +28,32 @@ var Player = function(name,id){
     self.updateScore = function (score) {
         self.score = score;
     }
+    self.changeName = function(name) {
+        self.name = name;
+    }
     return self;
 }
 
 //list of sockets
 SOCKET_LIST = {};
-//list of scores
+//list of scores&players
 SCORES_LIST = {};
 //loading socket.io and binding to server
 const io = require('socket.io')(serv);
+
 io.sockets.on('connection', function(socket) {
     console.log(socket.id + 'has joined the game.');
     
-    
+    //create a player
+    var name = 'undefined'
+    var player = new Player(name, socket.id);
     //add name to the player
-    var name = 'anon';
     socket.on('username-submit', function(username) {
-        player.name = username;
+        player.changeName(username);
         console.log("hello" + username); // for debugging
     })
-    var player = new Player(name, socket.id);
+    
+
     SCORES_LIST[socket.id] = player;
     SOCKET_LIST[socket.id] = socket;
        

@@ -1,7 +1,4 @@
-socket.on('sendClient', function(data) {
-    console.log(data);
-    socket.emit('recievedClient', {my: 'data'});
-});
+
 //list of objects containing name and score of all players.
 scores = [];
 
@@ -21,7 +18,7 @@ function updateLeaderBoard() {
 
     scores.sort(function(a, b){ return b.score - a.score });
     
-    for(let i=0; i<8; i++) {
+    for(let i=0; i<scores.length; i++) {
 //        if(i<scores.length){
             let name = document.createElement("div");
             let score = document.createElement("div");
@@ -41,4 +38,5 @@ function updateLeaderBoard() {
     }
 }
 
-setInterval(updateLeaderBoard, 40);
+// function is invoked every 50 ms
+setInterval(updateLeaderBoard, 50);

@@ -1,16 +1,44 @@
-// var userName ="Anonymous";
-// var userNameEntered =false;
+socket.on('sendClient', function(data) {
+    console.log(data);
+    socket.emit('recievedClient', {my: 'data'});
+});
+scores = [];
 
-// var submit = document.getElementById("submit");
-//     submit.onclick = function(){
-//     document.getElementById("username").style.visibility="hidden";
-//     document.getElementById("transparent-overlay").style.visibility="hidden";
-//     document.getElementById("username-form").style.visibility="hidden";
-//     if(document.getElementById("username").value !==  ""){
-//         userName = document.getElementById("username").value;
-//     }
-// }
 
-// function getUserName(){
-//     return userName
-// }
+setInterval(function(){
+    socket.emit('sendNewScore', playerScore);
+}, 20);
+
+socket.on('updateScores', (data) => {
+    scores = data;
+});
+
+
+
+function updateLeaderBoard(){
+    let leaderboard = document.getElementById("board");
+    leaderboard.innerHTML = "";
+
+    scores.sort(function(a, b){ return b.score - a.score });
+    
+    for(let i=0; i<8; i++) {
+        if(i < scores.length){
+            let name = document.createElement("div");
+            let score = document.createElement("div");
+            name.classList.add("name");
+            score.classList.add("score");
+            name.innerText = scores[i].name;
+            score.innerText = scores[i].score;
+
+            let scoreRow = document.createElement("div");
+            scoreRow.classList.add("row");
+            scoreRow.appendChild(name);
+            scoreRow.appendChild(score);
+            leaderboard.appendChild(scoreRow);
+
+            elements.push(scoreRow);
+        }
+    }
+}
+updateLeaderBoard;
+setInterval(updateLeaderBoard;, 30);

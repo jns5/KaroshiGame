@@ -14,8 +14,9 @@ var submit = document.getElementById("submit");
         userName = document.getElementById("username").value;
     }
     if(userName.length > 11){
-      userName=userName.substring(0,11)
+      userName=userName.substring(0,11);
     }
+    socket.emit('username-submit', userName);
 }
 
 var Key = {

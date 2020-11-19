@@ -7,7 +7,7 @@ scores = [];
 
 setInterval(function(){
     socket.emit('sendNewScore', playerScore);
-}, 20);
+}, 50);
 
 socket.on('updateScores', (data) => {
     scores = data;
@@ -21,8 +21,8 @@ function updateLeaderBoard(){
 
     scores.sort(function(a, b){ return b.score - a.score });
     
-    for(let i=0; i<8; i++) {
-        if(i < scores.length){
+    for(let i=0; i<scores.length; i++) {
+        
             let name = document.createElement("div");
             let score = document.createElement("div");
             name.classList.add("name");
@@ -36,9 +36,9 @@ function updateLeaderBoard(){
             scoreRow.appendChild(score);
             leaderboard.appendChild(scoreRow);
 
-            elements.push(scoreRow);
-        }
+           
+        
     }
 }
 updateLeaderBoard;
-setInterval(updateLeaderBoard;, 30);
+setInterval(updateLeaderBoard, 50);

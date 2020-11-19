@@ -44,7 +44,7 @@ io.sockets.on('connection', function(socket) {
     //add name to the player
     var name = 'anon';
     socket.on('username-submit', function(username) {
-        name = username;
+        player.name = username;
         console.log("hello" + username); // for debugging
     })
     var player = new Player(name, socket.id);
@@ -56,7 +56,7 @@ io.sockets.on('connection', function(socket) {
     //listen for new score updates from user, then change player.score accordingly
     socket.on('sendNewScore', function(score) {
         player.updateScore(score);
-        console.log(score);
+        //console.log(score);
     });
     
     socket.emit('sendClient', {hello: 'world'}); // debugging
@@ -74,6 +74,7 @@ io.sockets.on('connection', function(socket) {
 });
     //emit score every 40 milliseconds
     setInterval(function(){
+        // info about name and scores of everyone to be sent to every player
         var pack = [];
         for(var i in SCORES_LIST){
             var score_player = SCORES_LIST[i];
@@ -87,4 +88,4 @@ io.sockets.on('connection', function(socket) {
             socket.emit('updateScores', pack);
         }
 
-    },40)
+    },50);

@@ -16,6 +16,18 @@ socket.on('add-player', function(data){
     console.log(data);
 }) */
 // updates positions of viruses
+
+
+    var virus = document.createElement('img');
+    virus.setAttribute('src', '../images/redvir.png');
+    virus.className = 'icon';
+    // virus.style.left = data[i].x + 'px';
+    // virus.style.top = data[i].y + 'px';
+    virus.style.position = 'absolute';
+    virus.style.width = '100px';
+    virus.style.height = '100px';
+    virus.style.zIndex = '-1';
+    
 socket.on('new-position', function(data){
     var board = document.querySelector('.game-board');
     
@@ -25,18 +37,23 @@ socket.on('new-position', function(data){
         board.removeChild(prev_viruses[i]);
     }
     
+    // for(var i = 0; i < data.length; i++ ){
+        // var virus = document.createElement('img');
+        // virus.setAttribute('src', '../images/redvir.png');
+        // virus.className = 'icon';
+        // // virus.style.left = data[i].x + 'px';
+        // // virus.style.top = data[i].y + 'px';
+        // virus.style.position = 'absolute';
+        // virus.style.width = '100px';
+        // virus.style.height = '100px';
+        // virus.style.zIndex = '-1';
+        
+        
+    
     for(var i = 0; i < data.length; i++ ){
-        var virus = document.createElement('img');
-        virus.setAttribute('src', '../images/redvir.png');
-        virus.className = 'icon';
         virus.style.left = data[i].x + 'px';
         virus.style.top = data[i].y + 'px';
-        virus.style.position = 'absolute';
-        virus.style.width = '100px';
-        virus.style.height = '100px';
-        virus.style.zIndex = '-1';
         board.appendChild(virus);
-        
     }
 });      
 
@@ -50,16 +67,16 @@ socket.on('new-position', function(data){
         }
         
         window.addEventListener('keyup', function(event) {
-            if(event.key === LEFT){
+            if(event.key === 37){
                 socket.emit('keyPress', {inputId: 'left', state: false});
             };
-            if(event.key === RIGHT){
+            if(event.key === 39){
                 socket.emit('keyPress', {inputId: 'right', state: false});
             };
-            if(event.key === UP){
+            if(event.key === 38){
                 socket.emit('keyPress', {inputId: 'up', state: false});
             };
-            if(event.key === DOWN){
+            if(event.key === 40){
                 socket.emit('keyPress', {inputId: 'down', state: false});
             };
 
@@ -71,36 +88,35 @@ socket.on('new-position', function(data){
                 var keycode = evt.keyCode || evt.which; 
         
             var info = document.getElementById("chat-list");
-            var blob = document.querySelector(".icon");
             // var direction = "Up";
             switch (keycode) {
                 case Key.LEFT:
                     socket.emit('keyPress', {inputId: 'left', state: true});
-                    //blob.style.left = parseInt(blob.style.left) - 5 + 'px';
+                    virus.style.left = parseInt(virus.style.left) - 5 + 'px';
                     movePointer(keycode);
                     direction = "Left";
-                    checkBoundary(blob,direction);
+                    checkBoundary(virus,direction);
                     break;
                 case Key.UP:
                     socket.emit('keyPress', {inputId: 'up', state: true});
-                    //blob.style.top = parseInt(blob.style.top) - 5 + 'px';
+                    virus.style.top = parseInt(virus.style.top) - 5 + 'px';
                     movePointer(keycode);
                     direction = "Up";
-                    checkBoundary(blob,direction);
+                    checkBoundary(virus,direction);
                     break;
                 case Key.RIGHT:
                     socket.emit('keyPress', {inputId: 'right', state: true});
-                    //blob.style.left = parseInt(blob.style.left) + 5 + 'px';
+                    virus.style.left = parseInt(virus.style.left) + 5 + 'px';
                     movePointer(keycode);
                     direction = "Right";
-                    checkBoundary(blob,direction);
+                    checkBoundary(virus,direction);
                     break;
                 case Key.DOWN:
                     socket.emit('keyPress', {inputId: 'down', state: true});
-                    //blob.style.top = parseInt(blob.style.top) + 5 + 'px';
+                    virus.style.top = parseInt(virus.style.top) + 5 + 'px';
                     movePointer(keycode);
                     direction = "Down";
-                    checkBoundary(blob,direction);
+                    checkBoundary(virus,direction);
                     break;
                 case 32: // space button
                     
@@ -123,7 +139,7 @@ socket.on('new-position', function(data){
                     return;
             }
             for (let i = 0; i < pelletes.length; i++){
-            if (cross(pelletes[i], blob)){
+            if (cross(pelletes[i], virus)){
                 var board = document.querySelector(".game-board");
                 board.removeChild(pelletes[i]);
                 playerScore= playerScore + 5;
@@ -133,7 +149,7 @@ socket.on('new-position', function(data){
             }
             }
             for (let i = 0; i < masks.length; i++){
-            if (cross(masks[i], blob)){
+            if (cross(masks[i], virus)){
                 var board = document.querySelector(".game-board");
                 board.removeChild(masks[i]);
                 playerScore = playerScore - 2;
@@ -143,7 +159,7 @@ socket.on('new-position', function(data){
             }
             }
             for (let i = 0; i < sanitizers.length; i++){
-            if (cross(sanitizers[i], blob)){
+            if (cross(sanitizers[i], virus)){
                 var board = document.querySelector(".game-board");
                 board.removeChild(sanitizers[i]);
                 playerScore= playerScore - 3;

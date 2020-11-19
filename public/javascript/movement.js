@@ -60,7 +60,7 @@ function updateMovementPositions(){
     for(var i = 0; i < pos.length; i++){
         let virus = document.createElement('img');
         virus.setAttribute('src', '../images/redvir.png');
-        virus.className = 'icon';
+        virus.className = 'virus';
         virus.style.position = 'absolute';
         virus.style.width = '50px';
         virus.style.height = '50px';

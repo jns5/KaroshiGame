@@ -11,11 +11,6 @@ Each round lasts 5 minutes and the top 10 players are displayed on the leaderboa
 - By colliding with sanitizer and mask
 
 
-#### Virus types (Players choose their virus):
-- Blue Virus:  Faster than the others, but loses double the points when hitting a mask/sanitizer.
-- Red virus: Natural hunter, gains more points when it kills other viruses, but half points when eating food. 
-- Green virus: Strongest one, loses least points when hitting a mask/sanitizer but moves slower than the others.
-
 
 ## Group members:
 * [John Mendez](https://github.com/johnmendez2)

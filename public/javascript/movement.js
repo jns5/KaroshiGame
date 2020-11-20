@@ -13,7 +13,6 @@ for (var i = 0; i < 10; i++ ) {
     masks.push(spawnmasks());
 }
 
-viruses();
 
 function cross(element1, element2) {
   left1 = element1.offsetLeft; //i1x
@@ -124,7 +123,7 @@ socket.on('updatePos', function(positions){
 
 // //function invoked every 50 ms to update virus positions
 // setInterval(updateMovementPositions, 50);
-
+viruses();
 function viruses(){
   let virus = document.createElement('img');
   virus.setAttribute('src', '../images/redvir.png');
@@ -138,54 +137,52 @@ function viruses(){
 
 setInterval(updateMovementPositions, 50);
 function updateMovementPositions(){
-let board = document.querySelector('.game-board');
+  let board = document.querySelector('.game-board');
 
-//remove all virus elements before adding new ones with updated position
-while (document.getElementsByClassName('virus')[0]) {
-  document.getElementsByClassName('virus')[0].removeChild();
-}
-// clearViruses(document.querySelectorAll('.virus'));
-for(var i = 0; i < pos.length; i++){
-  
-  // let virus = document.createElement('img');
-  // virus.setAttribute('src', '../images/redvir.png');
-  // virus.className = 'icon';
-  // virus.style.position = 'absolute';
-  // virus.style.width = '50px';
-  // virus.style.height = '50px';
-  // virus.style.zIndex = '-1';
-  virus.style.left = pos[i].x + 'px';
-  virus.style.top = pos[i].y + 'px';
-  board.appendChild(virus);
-}   
-for (let i = 0; i < pelletes.length; i++){
-  if (cross(pelletes[i], virus)){
-    board.removeChild(pelletes[i]);
-    playerScore= playerScore + 5;
-    score.innerHTML = userName+" : "+playerScore;
-    pelletes.splice(i, 1);
-    pelletes.push(createpellet());
+  //remove all virus elements before adding new ones with updated position
+  while (document.getElementsByClassName('virus')[0]) {
+    document.getElementsByClassName('virus')[0].removeChild();
+  }
+ 
+  for(var i = 0; i < pos.length; i++){
+    // let virus = document.createElement('img');
+    // virus.setAttribute('src', '../images/redvir.png');
+    // virus.className = 'virus';
+    // virus.style.position = 'absolute';
+    // virus.style.width = '50px';
+    // virus.style.height = '50px';
+    // virus.style.zIndex = '-1';
+    virus.style.left = pos[i].x + 'px';
+    virus.style.top = pos[i].y + 'px';
+    board.appendChild(virus);
+  }   
+  for (let i = 0; i < pelletes.length; i++){
+    if (cross(pelletes[i], virus)){
+      board.removeChild(pelletes[i]);
+      playerScore= playerScore + 5;
+      score.innerHTML = userName+" : "+playerScore;
+      pelletes.splice(i, 1);
+      pelletes.push(createpellet());
+        }
       }
+  for (let i = 0; i < masks.length; i++){
+    if (cross(masks[i], virus)){
+      board.removeChild(masks[i]);
+      playerScore = playerScore - 2;
+      score.innerHTML = userName+" : "+playerScore;
+      masks.splice(i, 1);
+      masks.push(spawnmasks());
     }
-        for (let i = 0; i < masks.length; i++){
-          if (cross(masks[i], virus)){
-            board.removeChild(masks[i]);
-              playerScore = playerScore - 2;
-            score.innerHTML = userName+" : "+playerScore;
-              masks.splice(i, 1);
-            masks.push(spawnmasks());
-          }
-        }
-        for (let i = 0; i < sanitizers.length; i++){
-          if (cross(sanitizers[i], virus)){
-
-            board.removeChild(sanitizers[i]);
-            playerScore= playerScore - 3;
-            score.innerHTML = userName+" : "+playerScore;
-              sanitizers.splice(i, 1);
-            sanitizers.push(spawnsan());
-          }
-          
-        }
+  }
+  for (let i = 0; i < sanitizers.length; i++){
+    if (cross(sanitizers[i], virus)){
+    board.removeChild(sanitizers[i]);
+    playerScore= playerScore - 3;
+    score.innerHTML = userName+" : "+playerScore;
+    sanitizers.splice(i, 1);
+    sanitizers.push(spawnsan());
+    }
+  }
 };
+
 }

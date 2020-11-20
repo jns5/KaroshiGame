@@ -1,7 +1,4 @@
-socket.on('sendClient', function(data) {
-    console.log(data);
-    socket.emit('recievedClient', {my: 'data'});
-});
+
 //list of objects containing name and score of all players.
 scores = [];
 
@@ -21,19 +18,19 @@ function updateLeaderBoard() {
 
     scores.sort(function(a, b){ return b.score - a.score });
     
-    for(let i=0; i<8; i++) {
+    for(let i=0; i<scores.length; i++) {
 //        if(i<scores.length){
             let name = document.createElement("div");
-            let score = document.createElement("div");
+            //let score = document.createElement("div");
             name.classList.add("name");
-            score.classList.add("score");
-            name.innerText = scores[i].name;
-            score.innerText = scores[i].score;
+            //score.classList.add("score");
+            name.innerText = (i+1) + " - " + scores[i].name + " : " + scores[i].score;
+            //score.innerText = scores[i].score;
 
             let scoreRow = document.createElement("div");
             scoreRow.classList.add("row");
             scoreRow.appendChild(name);
-            scoreRow.appendChild(score);
+            //scoreRow.appendChild(score);
             leaderboard.appendChild(scoreRow);
 
 //        }

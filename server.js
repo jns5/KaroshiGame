@@ -19,6 +19,7 @@ app.get('/', function(req, res){
     res.sendFile('index.html', {root: __dirname});
 });
 
+//player constructor
 var Player = function(name,id){
     self = {
     name: name,
@@ -45,8 +46,7 @@ io.sockets.on('connection', function(socket) {
     console.log(socket.id + 'has joined the game.');
     
     //create a player
-    var name = 'undefined'
-    var player = new Player(name, socket.id);
+    var player = new Player(name = 'anonymous penguin', socket.id);
     //add name to the player
     socket.on('username-submit', function(username) {
         player.changeName(username);
@@ -62,14 +62,8 @@ io.sockets.on('connection', function(socket) {
     //listen for new score updates from user, then change player.score accordingly
     socket.on('sendNewScore', function(score) {
         player.updateScore(score);
-        //console.log(score);
     });
     
-    socket.emit('sendClient', {hello: 'world'}); // debugging
-   
-    socket.on('recievedClient', function(data) { // also debugging
-        console.log(data)
-    })
     
     socket.on('disconnect', function() {
         console.log(socket.id + 'has left the game.')

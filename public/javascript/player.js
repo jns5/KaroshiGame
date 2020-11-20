@@ -1,6 +1,6 @@
 var score = document.querySelector(".score");
 var playerScore=0;
-var userName ="Anonymous";
+var userName ="poggers";
 var name = document.getElementsByClassName("name-space");
 
 //const socket = io();

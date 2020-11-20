@@ -5,7 +5,6 @@
     <link rel="stylesheet" href="css/game-style.css">
     <link href="https://fonts.googleapis.com/css2?family=Krona+One&display=swap" rel="stylesheet"> <!--font style-->
     <script src="../socket.io/socket.io.js"></script>
-    <script src="javascript/main.js" defer></script>
     <script>
         const socket = io();
     </script>
@@ -24,42 +23,7 @@
 
         <div class ="leaderboard">
             <h2><b>leaderboard:</b></h2>
-            <div id="board">
-                <!-- <table>
-                    <tr>
-                        <th>Player 1</th>
-                        <th>- </th>
-                    </tr>
-                    <tr>
-                        <th>Player 2</th>
-                        <th>- </th>
-                    </tr>
-                    <tr>
-                        <th>Player 3</th>
-                        <th>- </th>
-                    </tr>
-                    <tr>
-                        <th>Player 4</th>
-                        <th>- </th>
-                    </tr>
-                    <tr>
-                        <th>Player 5</th>
-                        <th>- </th>
-                    </tr>
-                    <tr>
-                        <th>Player 6</th>
-                        <th>- </th>
-                    </tr>
-                    <tr>
-                        <th>Player 7</th>
-                        <th>- </th>
-                    </tr>
-                    <tr>
-                        <th>Player 8</th>
-                        <th>- </th>
-                    </tr>
-                </table> -->
-            </div>
+            <div id="board"></div>
         </div>
         <div class="game-board" style="left:5px; top:5px;">
             <div id = "arrow"></div>
@@ -80,10 +44,11 @@
                     }
                 });
             </script>
-        </div>
+        </div>     
+    </div>
+        <script src="javascript/leaderboard.js" defer></script>
         <script src="javascript/pellets.js" defer></script>
         <script src="javascript/spawn.js" defer></script>
         <script src="javascript/player.js" defer></script>
-    </div>
 </body>
 </html>

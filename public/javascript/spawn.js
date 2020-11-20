@@ -1,6 +1,4 @@
-//where we create a
 
-// const socket = io();
 
 //where we create both the debuffs
 function spawnmasks(){

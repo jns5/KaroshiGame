@@ -5,7 +5,6 @@
     <link rel="stylesheet" href="css/game-style.css">
     <link href="https://fonts.googleapis.com/css2?family=Krona+One&display=swap" rel="stylesheet"> <!--font style-->
     <script src="../socket.io/socket.io.js"></script>
-    <script src="javascript/main.js" defer></script>
     <script>
         const socket = io();
     </script>
@@ -64,8 +63,10 @@
         <div class="game-board" style="left:5px; top:5px;">
             <div id = "arrow"></div>
             <div id="laser"></div>
-            <div class="name-space"></div>
-            <img  src="images\redvir.png" id="icon" style="left:320px; top:70px;">
+            <!-- <div class="name-space"></div> -->
+            <!-- <img  src="images\redvir.png" class="virus" style="left:320px; top:70px;">
+            <img  src="images\redvir.png" class="virus" style="left:320px; top:70px;">
+            <img  src="images\redvir.png" class="virus" style="left:320px; top:70px;"> -->
         </div>
         <div class="chatbox">
             <form id="chat-list"></form>       
@@ -81,9 +82,11 @@
                 });
             </script>
         </div>
+    </div>
+        <script src="javascript/leaderboard.js" defer></script>
         <script src="javascript/pellets.js" defer></script>
         <script src="javascript/spawn.js" defer></script>
         <script src="javascript/player.js" defer></script>
-    </div>
+        <script src="javascript/movement.js" defer></script>
 </body>
 </html>

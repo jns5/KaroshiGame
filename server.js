@@ -1,9 +1,13 @@
 //create server
 const express =  require("express");
 const app = express();
-
+//var session = require('express-session');
 const path = require("path");
 const http = require("http");
+
+const morgan = require("morgan");
+app.use(morgan('dev'));
+
 
 
 //const server = http.createServer(app);
@@ -22,6 +26,15 @@ app.use(express.static('public'));
 app.get('/', function(req, res){
     res.sendFile('index.html', {root: __dirname});
 });
+
+app.use(express.json());
+app.use(express.urlencoded());
+
+const chatRouter = require('./routes/post');
+app.use(chatRouter);
+
+const createDB = require('./daos/db');
+createDB();
 
 //server.listen(PORT, () => 
 //    console.log("Running the server, port = " + PORT)

@@ -2,11 +2,20 @@
 const express =  require("express");
 const app = express();
 //var session = require('express-session');
-
-
 const path = require("path");
-const http = require("http");
-const serv = http.Server(app); 
+const https = require("https");
+const fs = require("fs");
+//const serv = sslServer.Server(app);
+
+app.use(express.static('public'));
+app.get("/",(req,res,next)=>{
+    res.sendFile('index.html', {root: __dirname});
+});
+
+const sslServer =https.createServer({
+    key: fs.readFileSync(path.join(__dirname,"cert","key.pem")),
+    cert: fs.readFileSync(path.join(__dirname,"cert","cert.pem"))
+},app)
 
 const morgan = require("morgan");
 app.use(morgan('dev'));
@@ -15,16 +24,16 @@ app.use(morgan('dev'));
 
 //const server = http.createServer(app);
 const PORT = process.env.PORT || 3000;
-serv.listen(PORT, function(){
-    console.log("listening at port 3000"); 
+const server = sslServer.listen(PORT, function(){
+    console.log("listening at 3000");
 });
 
 
-app.use(express.static('public'));
+// app.use(express.static('public'));
 //send the index.html file
-app.get('/', function(req, res){
-    res.sendFile('index.html', {root: __dirname});
-});
+// app.get('/', function(req, res){
+//     res.sendFile('index.html', {root: __dirname});
+// });
 
 app.use(express.json());
 app.use(express.urlencoded());
@@ -35,7 +44,7 @@ app.use(chatRouter);
 const createDB = require('./daos/db');
 createDB();
 
-//server.listen(PORT, () => 
+//server.listen(PORT, () =>
 //    console.log("Running the server, port = " + PORT)
 //);
 //player constructor
@@ -59,11 +68,11 @@ SOCKET_LIST = {};
 //list of scores&players
 SCORES_LIST = {};
 //loading socket.io and binding to server
-const io = require('socket.io')(serv);
+const io = require('socket.io')(server);
 
 io.sockets.on('connection', function(socket) {
     console.log(socket.id + 'has joined the game.');
-    
+
     //create a player
     var player = new Player(name = 'anonymous penguin', socket.id);
     //add name to the player
@@ -71,19 +80,19 @@ io.sockets.on('connection', function(socket) {
         player.changeName(username);
         console.log("hello" + username); // for debugging
     })
-    
+
 
     SCORES_LIST[socket.id] = player;
     SOCKET_LIST[socket.id] = socket;
-       
+
 
 
     //listen for new score updates from user, then change player.score accordingly
     socket.on('sendNewScore', function(score) {
         player.updateScore(score);
     });
-    
-    
+
+
     socket.on('disconnect', function() {
         console.log(socket.id + 'has left the game.')
         delete SCORES_LIST[socket.id];
@@ -108,3 +117,4 @@ io.sockets.on('connection', function(socket) {
         }
 
     },50);
+

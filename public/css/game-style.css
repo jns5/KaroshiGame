@@ -142,12 +142,15 @@ h2{
     opacity: 1;
 }*/
 .pellets{
+    z-index: -1;
     animation: wigglePellets 3s ease-in-out infinite;
 }
 .sanitizers{
+    z-index: 1;
     animation: wiggleSan 3s ease-in-out infinite;
 }
 .masks{
+    z-index: 1;
     animation: wiggleMask 4s ease-in-out infinite;
 }
 @keyframes wigglePellets{
@@ -184,7 +187,7 @@ h2{
     /*top: 240px;*/
     width: 100px;
     height: 100px;
-    z-index: -1;
+    z-index: 2;
     border-radius:20%;
 }   
    

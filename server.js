@@ -39,20 +39,22 @@ var Player = function(name, id){
     self.changeName = function(name) {
         self.name = name;
     }
-    self.updatePosition = function(){
-        if(self.pressingLeft){
-            self.x -= self.speed;
-        }
-        if(self.pressingRight){
-            self.x += self.speed;
-        }
-        if(self.pressingUp){
-            self.y -= self.speed;
-        }
-        if(self.pressingDown){
-            self.y += self.speed;
-            console.log(self.y); // for debugging, it currently works
-        }
+    self.updatePosition = function(xPos,yPos){
+        // if(self.pressingLeft){
+        //     self.x -= self.speed;
+        // }
+        // if(self.pressingRight){
+        //     self.x += self.speed;
+        // }
+        // if(self.pressingUp){
+        //     self.y -= self.speed;
+        // }
+        // if(self.pressingDown){
+        //     self.y += self.speed;
+        //     console.log(self.y); // for debugging, it currently works
+        // }
+        self.x = xPos;
+        self.y = yPos;
     }
     return self;
 }
@@ -66,15 +68,15 @@ const io = require('socket.io')(serv);
 
 io.sockets.on('connection', function(socket) {
     console.log(socket.id + ' has joined the game.');
-    
+    var playerID = parseInt(Math.random()*100);
     //create a player
-    var player = new Player(name = 'anonymous', socket.id);
+    var player = new Player(name = 'anonymous', playerID);
     //add name to the player
     socket.on('username-submit', function(username) {
         player.changeName(username);
         console.log("hello" + username); // for debugging
     });
-    
+    socket.emit('yourID', playerID);
     //add players to these lists
     PLAYERS_LIST[socket.id] = player;
     SOCKET_LIST[socket.id] = socket;
@@ -88,17 +90,19 @@ io.sockets.on('connection', function(socket) {
     });
     
     socket.on('keyPress', function(keyData){
-        if(keyData.inputId === 'left')
-            player.pressingLeft = keyData.press;
+        // if(keyData.inputId === 'left')
+        //     player.updatePosition(keyData.x, keyData.y);
         
-        if(keyData.inputId === 'right')
-            player.pressingRight = keyData.press;
+        // if(keyData.inputId === 'right')
+        //     player.updatePosition(keyData.x, keyData.y);
             
-        if(keyData.inputId === 'up')
-            player.pressingUp = keyData.press;
+        // if(keyData.inputId === 'up')
+        //     // player.pressingUp = keyData.press;
+        //     player.updatePosition(keyData.x, keyData.y);
             
-        if(keyData.inputId === 'down')
-            player.pressingDown = keyData.press;
+        // if(keyData.inputId === 'down')
+        //     // player.pressingDown = keyData.press;
+            player.updatePosition(keyData.x, keyData.y);
             
         
     });
@@ -118,18 +122,19 @@ io.sockets.on('connection', function(socket) {
         var pack = [];
         for(var i in PLAYERS_LIST){
             var score_player = PLAYERS_LIST[i];
-            score_player.updatePosition();
+            //score_player.updatePosition();
             pack.push({
                 name: score_player.name,
                 score: score_player.score,
                 x: score_player.x,
-                y: score_player.y
+                y: score_player.y,
+                id: score_player.id
             })
         }
         for(var j in SOCKET_LIST){
             var socket = SOCKET_LIST[j];
             socket.emit('updateScores', pack);
-            socket.emit('updatePos', pack);
+            socket.broadcast.emit('updatePos', pack);
         }
 
     },50);

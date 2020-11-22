@@ -7,9 +7,20 @@
     <script src="../socket.io/socket.io.js"></script>
     <script>
         const socket = io();
+        // let board = document.querySelector('.game-board');
+        // let myVirus = document.createElement('img');
+        // myVirus.setAttribute('src', '/images/redvir.png');
+        // myVirus.id = 'icon';
+        // myVirus.style.position = 'absolute';
+        // myVirus.style.width = '50px';
+        // myVirus.style.height = '50px';
+        // myVirus.style.zIndex = '-1';
+        // myVirus.style.left = parseInt(Math.random() * 950)+ 'px';
+        // myVirus.style.top = parseInt(Math.random() * 600) + 'px';
+        // board.appendChild(myVirus);
     </script>
 </head>
-<body  class="game-page" onload="" onkeydown="" onkeyup="">
+<body  class="game-page" onload="init()" onkeydown="" onkeyup="">
     <div class="screen">
         <div id="transparent-overlay"></div>
             <div id="username-form">
@@ -23,50 +34,11 @@
 
         <div class ="leaderboard">
             <h2><b>leaderboard:</b></h2>
-            <div id="board">
-                <!-- <table>
-                    <tr>
-                        <th>Player 1</th>
-                        <th>- </th>
-                    </tr>
-                    <tr>
-                        <th>Player 2</th>
-                        <th>- </th>
-                    </tr>
-                    <tr>
-                        <th>Player 3</th>
-                        <th>- </th>
-                    </tr>
-                    <tr>
-                        <th>Player 4</th>
-                        <th>- </th>
-                    </tr>
-                    <tr>
-                        <th>Player 5</th>
-                        <th>- </th>
-                    </tr>
-                    <tr>
-                        <th>Player 6</th>
-                        <th>- </th>
-                    </tr>
-                    <tr>
-                        <th>Player 7</th>
-                        <th>- </th>
-                    </tr>
-                    <tr>
-                        <th>Player 8</th>
-                        <th>- </th>
-                    </tr>
-                </table> -->
-            </div>
+            <div id="board"></div>
         </div>
         <div class="game-board" style="left:5px; top:5px;">
             <div id = "arrow"></div>
             <div id="laser"></div>
-            <!-- <div class="name-space"></div> -->
-            <!-- <img  src="images\redvir.png" class="virus" style="left:320px; top:70px;">
-            <img  src="images\redvir.png" class="virus" style="left:320px; top:70px;">
-            <img  src="images\redvir.png" class="virus" style="left:320px; top:70px;"> -->
         </div>
         <div class="chatbox">
             <form id="chat-list"></form>       

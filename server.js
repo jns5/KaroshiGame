@@ -58,7 +58,9 @@ io.sockets.on('connection', function(socket) {
     SOCKET_LIST[socket.id] = socket;
        
 
-
+    socket.on('submitted_message', function(message) {
+        io.emit('submitted_message', '<strong>' + username + '</strong>: ' + message);
+    });
     //listen for new score updates from user, then change player.score accordingly
     socket.on('sendNewScore', function(score) {
         player.updateScore(score);

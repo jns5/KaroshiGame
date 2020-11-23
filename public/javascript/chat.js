@@ -16,12 +16,12 @@ function send() {
 
     // when 'chat_message' event is received, append message received from server username
     socket.on('submitted_message', function(msg) {
-        $('#chatbox').append($('<li>').html(msg));
+        $('#messages').append($('<li>').html(msg));
     });
 
     // when receiving th 'on_line' event, append text with username
     socket.on('participant', function(username) {
-        $('#chatbox').append($('<li>').html(username));
+        $('#messages').append($('<li>').html(username));
     });
 
 

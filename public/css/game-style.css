@@ -99,44 +99,19 @@ h2{
     border-radius: 10px;
     border: 1px solid whitesmoke;
 }
-#chatbox {
+#chatbox{
     color: whitesmoke;
     position: absolute;
-    width: auto;
-    height: auto;
-    bottom: 110px;
-    right: 110px;
-    opacity: 1;
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-}
-
-#chatbox li {
-    padding: 5px 10px;
-}
-
-#chatbox li:nth-child(odd) {
-    background: #eee;
-}
-/*
-.chatbox:hover{
-    opacity: 1;
-}
-*/
-#chat-list {
-    position: absolute;
-    padding: 5px;
-    width: 290px;
-    height: 300px;
-    bottom: 0px;
-    left: 0px;
+    width: 400px;
+    height: 400px;
     background-color:#0c1a69b0;
-    border-radius: 10px;
+    right: 20px;
+    bottom: 40px;
     border: 2px solid whitesmoke; 
-    z-index: -1;
+    border-radius: 10px;
+    scroll-behavior: smooth;
+    list-style-type: none;
 }
-
 #chat-input {
     background-color: #0d1f83;
     width: 200px;
@@ -147,11 +122,33 @@ h2{
     z-index: 6;
     border-radius: 5px;
     color: whitesmoke;
+} 
+#send{
+    text-align: center;
+    font-size: 16px;
+    padding: 5px 7px;
+    font-family:'Krona One', sans-serif;
+    border-radius: 5px;
+    
 }
-/*
-#chat-input:hover{
-    opacity: 1;
-}*/
+
+#chatbox li {
+    padding: 5px 10px;
+}
+
+#chatbox li:nth-child(odd) {
+    background: #eee;
+}
+
+#chat-form {
+    position: absolute;
+    text-align: center;
+    padding: 5px;
+    width: 400px;
+    height: auto;
+    bottom: 0px;    
+    z-index: 1;
+}
 .pellets{
     animation: wigglePellets 3s ease-in-out infinite;
 }
@@ -181,14 +178,7 @@ h2{
     75% {transform: translate(+3px,0px);}
     100% {transform: translate(-3px,0px);}
 }
-#send{
-    text-align: center;
-    font-size: 16px;
-    padding: 5px 7px;
-    font-family:'Krona One', sans-serif;
-    border-radius: 5px;
-    
-}
+
 
 #icon{   
     position: absolute;

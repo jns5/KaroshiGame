@@ -1,5 +1,5 @@
 var score = document.querySelector(".score");
-var playerScore=0;
+var playerScore = 0;
 var userName ="poggers";
 var name = document.getElementsByClassName("name-space");
 
@@ -39,7 +39,7 @@ function listener(evt, element, fn) {
       evt = window.event;
     var keycode = evt.keyCode || evt.which; 
   
-    var info = document.getElementById("chat-list");
+    var info = document.getElementById("chat-form");
     var blob = document.getElementById("icon");
     // var direction = "Up";
     switch (keycode) {
@@ -155,7 +155,7 @@ function checkBoundary(element, direction){
   {
       init()
       //var chat = document.getElementById("chat-input");
-      //document.getElementById("chat-list").innerHTML = chat.value;
+      //document.getElementById("chat-form").innerHTML = chat.value;
   }
   
   function playerShootUp(){ // to shoot bullets upwards

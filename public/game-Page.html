@@ -9,7 +9,8 @@
     <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script>
-        const socket = io();
+        //const socket = io();
+        socket = io.connect('http://localhost:3000');
     </script>
 </head>
 <body  class="game-page" onload="" onkeydown="" onkeyup="">
@@ -35,13 +36,14 @@
             <img  src="images\redvir.png" id="icon" style="left:320px; top:70px;">
         </div>
         <div id="chatbox"> 
-            <ul id = "ugh"> </ul>
-            <form id="chat-list">      
+            <ul id = "messages"> </ul>
+            <form id="chat-form">      
                 <input id="chat-input" type="text"  placeholder="Type to chat" oninput="" autocomplete="off">
-                <button type ="submit" id ="send" onclick="init()">Send 
+                <button type ="submit" id ="send" onclick="send()">Send</button>
+                <!-- <input type="submit" value="send" id ="send" onclick="send()"> -->
             </form> 
         </div>
-            <script>
+            <!-- <script>
                 var chat = document.getElementById("chat-input"); // to use enter to send message
                 chat.addEventListener("keyup", function(event) {
                     if (event.keyCode === 13) {
@@ -49,7 +51,7 @@
                         document.getElementById("send").click();
                     }
                 });
-            </script>
+            </script> -->
         </div>     
     </div>
         <script src="javascript/chat.js" defer></script>

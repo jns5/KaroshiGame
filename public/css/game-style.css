@@ -99,7 +99,7 @@ h2{
     border-radius: 10px;
     border: 1px solid whitesmoke;
 }
-.chatbox {
+#chatbox {
     color: whitesmoke;
     position: absolute;
     width: auto;
@@ -107,6 +107,17 @@ h2{
     bottom: 110px;
     right: 110px;
     opacity: 1;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+#chatbox li {
+    padding: 5px 10px;
+}
+
+#chatbox li:nth-child(odd) {
+    background: #eee;
 }
 /*
 .chatbox:hover{

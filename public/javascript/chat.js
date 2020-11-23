@@ -1,18 +1,25 @@
 function init() {
     //when the page loads
     //create the scoket and connect to server on port 3000
-    socket = io.connect('http://localhost:3000');
     const chatbox = document.getElementById('chatbox');
     const txt = document.getElementById('chat-input');
     const chlist = document.getElementById('ugh');
     
-    // submit text message without reload/refresh the page
-    chatbox.submit(function(e) {
+    // // submit text message without reload/refresh the page
+    // chatbox.submit(function(e) {
+    //     e.preventDefault(); // prevents page reloading
+    //     //send the value of the input to server through socket
+    //     console.log(txt.val)
+    //     socket.emit('submitted_message', txt.val());
+    //     txt.val(''); //empty the input field for any new message to b typed
+    //     return false;
+    // });
+
+    $('form').submit(function(e) {
         e.preventDefault(); // prevents page reloading
         //send the value of the input to server through socket
-        console.log(txt.val)
-        socket.emit('submitted_message', txt.val());
-        txt.val(''); //empty the input field for any new message to b typed
+        socket.emit('submitted_message', $('#txt').val());
+        $('#txt').val(''); //empty the input field for any new message to b typed
         return false;
     });
 

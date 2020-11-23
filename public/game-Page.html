@@ -5,6 +5,7 @@
     <link rel="stylesheet" href="css/game-style.css">
     <link href="https://fonts.googleapis.com/css2?family=Krona+One&display=swap" rel="stylesheet"> <!--font style-->
     <script src="../socket.io/socket.io.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script>
         const socket = io();
     </script>
@@ -31,11 +32,13 @@
             <div class="name-space"></div>
             <img  src="images\redvir.png" id="icon" style="left:320px; top:70px;">
         </div>
-        <div class="chatbox">
-            <form id="chat-list"></form>       
-            <input id="chat-input" type="text"  placeholder="Type to chat" autocomplete="off" />
-            <button id="send" onclick="message()">Send</button>
-            <script>
+        <div id="chatbox"> 
+            <ul id = "ugh"></ul>
+            <form id="chat-list">      
+                <input id="chat-input" type="text"  placeholder="Type to chat" oninput="" autocomplete="off" />
+                <button type ="submit" id ="send" onclick="init()>Send</button>
+            </form> 
+        </div>
                 var chat = document.getElementById("chat-input"); // to use enter to send message
                 chat.addEventListener("keyup", function(event) {
                     if (event.keyCode === 13) {
@@ -46,6 +49,7 @@
             </script>
         </div>     
     </div>
+        <script defer src="javascript/chat.js"></script>
         <script src="javascript/leaderboard.js" defer></script>
         <script src="javascript/pellets.js" defer></script>
         <script src="javascript/spawn.js" defer></script>
